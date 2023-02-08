@@ -11,14 +11,8 @@ def group(record):
   if True and record.ssList and record.ssList[0] in adrg_ss:
     message('符合DE2入组条件，匹配规则：主手术匹配')
     
-    if MDCD_DRG.DE21_group(record):
-      return 'DE21'
-
-    if MDCD_DRG.DE23_group(record):
-      return 'DE23'
-
-    if MDCD_DRG.DE25_group(record):
-      return 'DE25'
+    if MDCD_DRG.DE29_group(record):
+      return 'DE29'
 
     return 'DE2'
   else:

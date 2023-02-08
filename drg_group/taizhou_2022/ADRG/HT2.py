@@ -11,6 +11,9 @@ def group(record):
   if True and record.zdList[0] in adrg_zd:
     message('符合HT2入组条件，匹配规则：主诊断匹配')
     
+    if MDCH_DRG.HT29_group(record):
+      return 'HT29'
+
     return 'HT2'
   else:
     return ''

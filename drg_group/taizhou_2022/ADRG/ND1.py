@@ -11,14 +11,8 @@ def group(record):
   if True and record.ssList and record.ssList[0] in adrg_ss:
     message('符合ND1入组条件，匹配规则：主手术匹配')
     
-    if MDCN_DRG.ND11_group(record):
-      return 'ND11'
-
-    if MDCN_DRG.ND13_group(record):
-      return 'ND13'
-
-    if MDCN_DRG.ND15_group(record):
-      return 'ND15'
+    if MDCN_DRG.ND19_group(record):
+      return 'ND19'
 
     return 'ND1'
   else:

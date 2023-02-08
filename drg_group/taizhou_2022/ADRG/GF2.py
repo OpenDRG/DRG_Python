@@ -11,14 +11,8 @@ def group(record):
   if True and record.ssList and record.ssList[0] in adrg_ss:
     message('符合GF2入组条件，匹配规则：主手术匹配')
     
-    if MDCG_DRG.GF21_group(record):
-      return 'GF21'
-
-    if MDCG_DRG.GF23_group(record):
-      return 'GF23'
-
-    if MDCG_DRG.GF25_group(record):
-      return 'GF25'
+    if MDCG_DRG.GF29_group(record):
+      return 'GF29'
 
     return 'GF2'
   else:

@@ -11,14 +11,8 @@ def group(record):
   if True and record.zdList[0] in adrg_zd:
     message('符合OR1入组条件，匹配规则：主诊断匹配')
     
-    if MDCO_DRG.OR11_group(record):
-      return 'OR11'
-
-    if MDCO_DRG.OR13_group(record):
-      return 'OR13'
-
-    if MDCO_DRG.OR15_group(record):
-      return 'OR15'
+    if MDCO_DRG.OR19_group(record):
+      return 'OR19'
 
     return 'OR1'
   else:

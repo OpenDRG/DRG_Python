@@ -11,8 +11,14 @@ def group(record):
   if True and record.ssList and record.ssList[0] in SS_VALID:
     message('符合XJ1入组条件，匹配规则：存在手术')
     
-    if MDCX_DRG.XJ19_group(record):
-      return 'XJ19'
+    if MDCX_DRG.XJ11_group(record):
+      return 'XJ11'
+
+    if MDCX_DRG.XJ13_group(record):
+      return 'XJ13'
+
+    if MDCX_DRG.XJ15_group(record):
+      return 'XJ15'
 
     return 'XJ1'
   else:

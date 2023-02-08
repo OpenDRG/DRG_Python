@@ -11,8 +11,14 @@ def group(record):
   if True and record.zdList[0] in adrg_zd:
     message('符合EV1入组条件，匹配规则：主诊断匹配')
     
-    if MDCE_DRG.EV19_group(record):
-      return 'EV19'
+    if MDCE_DRG.EV11_group(record):
+      return 'EV11'
+
+    if MDCE_DRG.EV13_group(record):
+      return 'EV13'
+
+    if MDCE_DRG.EV15_group(record):
+      return 'EV15'
 
     return 'EV1'
   else:

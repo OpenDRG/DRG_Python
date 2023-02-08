@@ -1,72 +1,54 @@
 from drg_group.taizhou_2022.Base import messages,has_mcc,has_cc,intersect
-def CS10_group(record):
-    return record.age<17
-def CS19_group(record):
-  return True
-def CJ19_group(record):
-  return True
-def CD29_group(record):
+def CB29_group(record):
   return True
 def CW19_group(record):
   return True
+def CR19_group(record):
+  return True
 def CV19_group(record):
   return True
-def CU19_group(record):
+def CD29_group(record):
   return True
-def CD19_group(record):
+def CB49_group(record):
   return True
-def CR11_group(record):
-  return len(record.zdList)>1 and has_mcc(record.zdList[0],record.zdList[1:])
-def CT11_group(record):
-  return len(record.zdList)>1 and has_mcc(record.zdList[0],record.zdList[1:])
-def CC11_group(record):
+def CS19_group(record):
+  return True
+def CX19_group(record):
+  return True
+def CB39_group(record):
+  return True
+def CC19_group(record):
+  return True
+def CJ19_group(record):
+  return True
+def CB11_group(record):
   return len(record.zdList)>1 and has_mcc(record.zdList[0],record.zdList[1:])
 def CZ11_group(record):
   return len(record.zdList)>1 and has_mcc(record.zdList[0],record.zdList[1:])
-def CB11_group(record):
+def CD11_group(record):
   return len(record.zdList)>1 and has_mcc(record.zdList[0],record.zdList[1:])
-def CB41_group(record):
+def CU11_group(record):
   return len(record.zdList)>1 and has_mcc(record.zdList[0],record.zdList[1:])
-def CB31_group(record):
+def CT11_group(record):
   return len(record.zdList)>1 and has_mcc(record.zdList[0],record.zdList[1:])
-def CB21_group(record):
-  return len(record.zdList)>1 and has_mcc(record.zdList[0],record.zdList[1:])
-def CX11_group(record):
-  return len(record.zdList)>1 and has_mcc(record.zdList[0],record.zdList[1:])
-def CR13_group(record):
-  return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:]))
-def CX13_group(record):
-  return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:]))
-def CB13_group(record):
-  return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:]))
-def CB33_group(record):
-  return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:]))
 def CZ13_group(record):
   return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:]))
-def CC13_group(record):
-  return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:]))
-def CB43_group(record):
+def CD13_group(record):
   return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:]))
 def CT13_group(record):
   return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:]))
-def CB23_group(record):
+def CU13_group(record):
   return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:]))
+def CB13_group(record):
+  return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:]))
+def CU15_group(record):
+  return True
+def CD15_group(record):
+  return True
 def CZ15_group(record):
-  return True
-def CT15_group(record):
-  return True
-def CX15_group(record):
-  return True
-def CB25_group(record):
-  return True
-def CR15_group(record):
-  return True
-def CB45_group(record):
   return True
 def CB15_group(record):
   return True
-def CB35_group(record):
-  return True
-def CC15_group(record):
+def CT15_group(record):
   return True
 

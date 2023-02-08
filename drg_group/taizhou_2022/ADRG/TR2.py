@@ -11,14 +11,8 @@ def group(record):
   if True and record.zdList[0] in adrg_zd:
     message('符合TR2入组条件，匹配规则：主诊断匹配')
     
-    if MDCT_DRG.TR21_group(record):
-      return 'TR21'
-
-    if MDCT_DRG.TR23_group(record):
-      return 'TR23'
-
-    if MDCT_DRG.TR25_group(record):
-      return 'TR25'
+    if MDCT_DRG.TR29_group(record):
+      return 'TR29'
 
     return 'TR2'
   else:

@@ -11,14 +11,8 @@ def group(record):
   if True and record.zdList[0] in adrg_zd and record.ssList and record.ssList[0] in adrg_ss:
     message('符合NA2入组条件，匹配规则：主诊断匹配、主手术匹配')
     
-    if MDCN_DRG.NA21_group(record):
-      return 'NA21'
-
-    if MDCN_DRG.NA23_group(record):
-      return 'NA23'
-
-    if MDCN_DRG.NA25_group(record):
-      return 'NA25'
+    if MDCN_DRG.NA29_group(record):
+      return 'NA29'
 
     return 'NA2'
   else:

@@ -11,14 +11,8 @@ def group(record):
   if True and record.ssList and record.ssList[0] in adrg_ss:
     message('符合IB3入组条件，匹配规则：主手术匹配')
     
-    if MDCI_DRG.IB31_group(record):
-      return 'IB31'
-
-    if MDCI_DRG.IB33_group(record):
-      return 'IB33'
-
-    if MDCI_DRG.IB35_group(record):
-      return 'IB35'
+    if MDCI_DRG.IB39_group(record):
+      return 'IB39'
 
     return 'IB3'
   else:

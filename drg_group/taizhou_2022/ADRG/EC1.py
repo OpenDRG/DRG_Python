@@ -11,14 +11,8 @@ def group(record):
   if True and record.ssList and record.ssList[0] in adrg_ss:
     message('符合EC1入组条件，匹配规则：主手术匹配')
     
-    if MDCE_DRG.EC11_group(record):
-      return 'EC11'
-
-    if MDCE_DRG.EC13_group(record):
-      return 'EC13'
-
-    if MDCE_DRG.EC15_group(record):
-      return 'EC15'
+    if MDCE_DRG.EC19_group(record):
+      return 'EC19'
 
     return 'EC1'
   else:

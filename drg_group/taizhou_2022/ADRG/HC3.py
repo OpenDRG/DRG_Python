@@ -11,14 +11,8 @@ def group(record):
   if True and record.ssList and record.ssList[0] in adrg_ss:
     message('符合HC3入组条件，匹配规则：主手术匹配')
     
-    if MDCH_DRG.HC31_group(record):
-      return 'HC31'
-
-    if MDCH_DRG.HC33_group(record):
-      return 'HC33'
-
-    if MDCH_DRG.HC35_group(record):
-      return 'HC35'
+    if MDCH_DRG.HC39_group(record):
+      return 'HC39'
 
     return 'HC3'
   else:

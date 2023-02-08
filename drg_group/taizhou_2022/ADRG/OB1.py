@@ -11,14 +11,8 @@ def group(record):
   if True and record.ssList and record.ssList[0] in adrg_ss:
     message('符合OB1入组条件，匹配规则：主手术匹配')
     
-    if MDCO_DRG.OB11_group(record):
-      return 'OB11'
-
-    if MDCO_DRG.OB13_group(record):
-      return 'OB13'
-
-    if MDCO_DRG.OB15_group(record):
-      return 'OB15'
+    if MDCO_DRG.OB19_group(record):
+      return 'OB19'
 
     return 'OB1'
   else:

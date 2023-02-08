@@ -11,14 +11,8 @@ def group(record):
   if True and record.zdList[0] in adrg_zd and record.ssList and record.ssList[0] in adrg_ss:
     message('符合OF2入组条件，匹配规则：主诊断匹配、主手术匹配')
     
-    if MDCO_DRG.OF21_group(record):
-      return 'OF21'
-
-    if MDCO_DRG.OF23_group(record):
-      return 'OF23'
-
-    if MDCO_DRG.OF25_group(record):
-      return 'OF25'
+    if MDCO_DRG.OF29_group(record):
+      return 'OF29'
 
     return 'OF2'
   else:

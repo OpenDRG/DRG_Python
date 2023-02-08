@@ -11,14 +11,8 @@ def group(record):
   if True and record.ssList and record.ssList[0] in adrg_ss:
     message('符合GK3入组条件，匹配规则：主手术匹配')
     
-    if MDCG_DRG.GK31_group(record):
-      return 'GK31'
-
-    if MDCG_DRG.GK33_group(record):
-      return 'GK33'
-
-    if MDCG_DRG.GK35_group(record):
-      return 'GK35'
+    if MDCG_DRG.GK39_group(record):
+      return 'GK39'
 
     return 'GK3'
   else:

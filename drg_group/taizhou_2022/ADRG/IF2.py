@@ -11,14 +11,8 @@ def group(record):
   if True and record.ssList and record.ssList[0] in adrg_ss:
     message('符合IF2入组条件，匹配规则：主手术匹配')
     
-    if MDCI_DRG.IF21_group(record):
-      return 'IF21'
-
-    if MDCI_DRG.IF23_group(record):
-      return 'IF23'
-
-    if MDCI_DRG.IF25_group(record):
-      return 'IF25'
+    if MDCI_DRG.IF29_group(record):
+      return 'IF29'
 
     return 'IF2'
   else:

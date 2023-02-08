@@ -11,14 +11,8 @@ def group(record):
   if True and record.zdList[0] in adrg_zd:
     message('符合HS2入组条件，匹配规则：主诊断匹配')
     
-    if MDCH_DRG.HS21_group(record):
-      return 'HS21'
-
-    if MDCH_DRG.HS23_group(record):
-      return 'HS23'
-
-    if MDCH_DRG.HS25_group(record):
-      return 'HS25'
+    if MDCH_DRG.HS29_group(record):
+      return 'HS29'
 
     return 'HS2'
   else:

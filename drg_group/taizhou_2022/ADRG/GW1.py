@@ -11,14 +11,8 @@ def group(record):
   if True and record.zdList[0] in adrg_zd:
     message('符合GW1入组条件，匹配规则：主诊断匹配')
     
-    if MDCG_DRG.GW11_group(record):
-      return 'GW11'
-
-    if MDCG_DRG.GW13_group(record):
-      return 'GW13'
-
-    if MDCG_DRG.GW15_group(record):
-      return 'GW15'
+    if MDCG_DRG.GW19_group(record):
+      return 'GW19'
 
     return 'GW1'
   else:

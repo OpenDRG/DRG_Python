@@ -11,14 +11,8 @@ def group(record):
   if True and record.zdList[0] in adrg_zd and record.ssList and record.ssList[0] in adrg_ss:
     message('符合OE1入组条件，匹配规则：主诊断匹配、主手术匹配')
     
-    if MDCO_DRG.OE11_group(record):
-      return 'OE11'
-
-    if MDCO_DRG.OE13_group(record):
-      return 'OE13'
-
-    if MDCO_DRG.OE15_group(record):
-      return 'OE15'
+    if MDCO_DRG.OE19_group(record):
+      return 'OE19'
 
     return 'OE1'
   else:

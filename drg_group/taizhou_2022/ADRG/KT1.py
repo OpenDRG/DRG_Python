@@ -11,9 +11,6 @@ def group(record):
   if True and record.zdList[0] in adrg_zd:
     message('符合KT1入组条件，匹配规则：主诊断匹配')
     
-    if MDCK_DRG.KT10_group(record):
-      return 'KT10'
-
     if MDCK_DRG.KT11_group(record):
       return 'KT11'
 

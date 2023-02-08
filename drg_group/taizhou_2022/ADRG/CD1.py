@@ -11,8 +11,14 @@ def group(record):
   if True and record.ssList and record.ssList[0] in adrg_ss:
     message('符合CD1入组条件，匹配规则：主手术匹配')
     
-    if MDCC_DRG.CD19_group(record):
-      return 'CD19'
+    if MDCC_DRG.CD11_group(record):
+      return 'CD11'
+
+    if MDCC_DRG.CD13_group(record):
+      return 'CD13'
+
+    if MDCC_DRG.CD15_group(record):
+      return 'CD15'
 
     return 'CD1'
   else:

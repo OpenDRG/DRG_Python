@@ -11,14 +11,8 @@ def group(record):
   if True and record.ssList and record.ssList[0] in adrg_ss:
     message('符合GE2入组条件，匹配规则：主手术匹配')
     
-    if MDCG_DRG.GE21_group(record):
-      return 'GE21'
-
-    if MDCG_DRG.GE23_group(record):
-      return 'GE23'
-
-    if MDCG_DRG.GE25_group(record):
-      return 'GE25'
+    if MDCG_DRG.GE29_group(record):
+      return 'GE29'
 
     return 'GE2'
   else:

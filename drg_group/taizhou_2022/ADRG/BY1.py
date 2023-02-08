@@ -11,8 +11,14 @@ def group(record):
   if True and record.zdList[0] in adrg_zd:
     message('符合BY1入组条件，匹配规则：主诊断匹配')
     
-    if MDCB_DRG.BY19_group(record):
-      return 'BY19'
+    if MDCB_DRG.BY11_group(record):
+      return 'BY11'
+
+    if MDCB_DRG.BY13_group(record):
+      return 'BY13'
+
+    if MDCB_DRG.BY15_group(record):
+      return 'BY15'
 
     return 'BY1'
   else:

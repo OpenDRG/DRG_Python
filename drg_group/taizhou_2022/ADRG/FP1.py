@@ -11,6 +11,15 @@ def group(record):
   if True and record.zdList[0] in adrg_zd and record.ssList and record.ssList[0] in adrg_ss:
     message('符合FP1入组条件，匹配规则：主诊断匹配、主手术匹配')
     
+    if MDCF_DRG.FP11_group(record):
+      return 'FP11'
+
+    if MDCF_DRG.FP13_group(record):
+      return 'FP13'
+
+    if MDCF_DRG.FP15_group(record):
+      return 'FP15'
+
     return 'FP1'
   else:
     return ''

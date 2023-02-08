@@ -11,14 +11,8 @@ def group(record):
   if True and record.zdList[0] in adrg_zd and record.ssList and record.ssList[0] in adrg_ss:
     message('符合RC1入组条件，匹配规则：主诊断匹配、主手术匹配')
     
-    if MDCR_DRG.RC11_group(record):
-      return 'RC11'
-
-    if MDCR_DRG.RC13_group(record):
-      return 'RC13'
-
-    if MDCR_DRG.RC15_group(record):
-      return 'RC15'
+    if MDCR_DRG.RC19_group(record):
+      return 'RC19'
 
     return 'RC1'
   else:

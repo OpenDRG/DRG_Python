@@ -11,8 +11,14 @@ def group(record):
   if True and record.ssList and record.ssList[0] in SS_VALID:
     message('符合TB1入组条件，匹配规则：存在手术')
     
-    if MDCT_DRG.TB19_group(record):
-      return 'TB19'
+    if MDCT_DRG.TB11_group(record):
+      return 'TB11'
+
+    if MDCT_DRG.TB13_group(record):
+      return 'TB13'
+
+    if MDCT_DRG.TB15_group(record):
+      return 'TB15'
 
     return 'TB1'
   else:

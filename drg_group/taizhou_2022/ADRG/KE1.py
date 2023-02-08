@@ -11,14 +11,8 @@ def group(record):
   if True and record.ssList and record.ssList[0] in adrg_ss:
     message('符合KE1入组条件，匹配规则：主手术匹配')
     
-    if MDCK_DRG.KE11_group(record):
-      return 'KE11'
-
-    if MDCK_DRG.KE13_group(record):
-      return 'KE13'
-
-    if MDCK_DRG.KE15_group(record):
-      return 'KE15'
+    if MDCK_DRG.KE19_group(record):
+      return 'KE19'
 
     return 'KE1'
   else:

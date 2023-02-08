@@ -11,14 +11,8 @@ def group(record):
   if True and record.zdList[0] in adrg_zd and record.ssList and record.ssList[0] in adrg_ss:
     message('符合RA3入组条件，匹配规则：主诊断匹配、主手术匹配')
     
-    if MDCR_DRG.RA31_group(record):
-      return 'RA31'
-
-    if MDCR_DRG.RA33_group(record):
-      return 'RA33'
-
-    if MDCR_DRG.RA35_group(record):
-      return 'RA35'
+    if MDCR_DRG.RA39_group(record):
+      return 'RA39'
 
     return 'RA3'
   else:

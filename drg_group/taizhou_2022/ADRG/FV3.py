@@ -11,14 +11,8 @@ def group(record):
   if True and record.zdList[0] in adrg_zd:
     message('符合FV3入组条件，匹配规则：主诊断匹配')
     
-    if MDCF_DRG.FV31_group(record):
-      return 'FV31'
-
-    if MDCF_DRG.FV33_group(record):
-      return 'FV33'
-
-    if MDCF_DRG.FV35_group(record):
-      return 'FV35'
+    if MDCF_DRG.FV39_group(record):
+      return 'FV39'
 
     return 'FV3'
   else:

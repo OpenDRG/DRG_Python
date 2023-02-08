@@ -11,6 +11,15 @@ def group(record):
   if True and intersect(record.zdList,adrg_zd) and record.weight and record.weight>=2500 and record.ageDay!=None and record.ageDay<=28:
     message('符合PS4入组条件，匹配规则：某一诊断匹配、体重大于2500克、新生儿')
     
+    if MDCP_DRG.PS41_group(record):
+      return 'PS41'
+
+    if MDCP_DRG.PS43_group(record):
+      return 'PS43'
+
+    if MDCP_DRG.PS45_group(record):
+      return 'PS45'
+
     return 'PS4'
   else:
     return ''

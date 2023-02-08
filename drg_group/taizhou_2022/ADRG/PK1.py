@@ -11,8 +11,14 @@ def group(record):
   if True and record.ssList and record.ssList[0] in adrg_ss and record.ageDay!=None and record.ageDay<=28:
     message('符合PK1入组条件，匹配规则：主手术匹配、新生儿')
     
-    if MDCP_DRG.PK19_group(record):
-      return 'PK19'
+    if MDCP_DRG.PK11_group(record):
+      return 'PK11'
+
+    if MDCP_DRG.PK13_group(record):
+      return 'PK13'
+
+    if MDCP_DRG.PK15_group(record):
+      return 'PK15'
 
     return 'PK1'
   else:

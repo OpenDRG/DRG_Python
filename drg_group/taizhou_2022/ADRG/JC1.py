@@ -11,17 +11,8 @@ def group(record):
   if True and record.ssList and record.ssList[0] in adrg_ss:
     message('符合JC1入组条件，匹配规则：主手术匹配')
     
-    if MDCJ_DRG.JC10_group(record):
-      return 'JC10'
-
-    if MDCJ_DRG.JC11_group(record):
-      return 'JC11'
-
-    if MDCJ_DRG.JC13_group(record):
-      return 'JC13'
-
-    if MDCJ_DRG.JC15_group(record):
-      return 'JC15'
+    if MDCJ_DRG.JC19_group(record):
+      return 'JC19'
 
     return 'JC1'
   else:

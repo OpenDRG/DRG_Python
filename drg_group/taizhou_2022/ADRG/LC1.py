@@ -11,14 +11,8 @@ def group(record):
   if True and record.ssList and record.ssList[0] in adrg_ss:
     message('符合LC1入组条件，匹配规则：主手术匹配')
     
-    if MDCL_DRG.LC11_group(record):
-      return 'LC11'
-
-    if MDCL_DRG.LC13_group(record):
-      return 'LC13'
-
-    if MDCL_DRG.LC15_group(record):
-      return 'LC15'
+    if MDCL_DRG.LC19_group(record):
+      return 'LC19'
 
     return 'LC1'
   else:

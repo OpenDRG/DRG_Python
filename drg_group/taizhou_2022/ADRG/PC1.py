@@ -11,14 +11,8 @@ def group(record):
   if True and record.ssList and record.ssList[0] in adrg_ss and record.ageDay!=None and record.ageDay<=28:
     message('符合PC1入组条件，匹配规则：主手术匹配、新生儿')
     
-    if MDCP_DRG.PC11_group(record):
-      return 'PC11'
-
-    if MDCP_DRG.PC13_group(record):
-      return 'PC13'
-
-    if MDCP_DRG.PC15_group(record):
-      return 'PC15'
+    if MDCP_DRG.PC19_group(record):
+      return 'PC19'
 
     return 'PC1'
   else:

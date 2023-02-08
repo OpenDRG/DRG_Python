@@ -11,14 +11,8 @@ def group(record):
   if True and record.ssList and intersect(record.ssList,adrg_ss) and intersect(record.ssList,adrg_ss1):
     message('符合FF2入组条件，匹配规则：双手术匹配')
     
-    if MDCF_DRG.FF21_group(record):
-      return 'FF21'
-
-    if MDCF_DRG.FF23_group(record):
-      return 'FF23'
-
-    if MDCF_DRG.FF25_group(record):
-      return 'FF25'
+    if MDCF_DRG.FF29_group(record):
+      return 'FF29'
 
     return 'FF2'
   else:
