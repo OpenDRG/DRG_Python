@@ -11,6 +11,9 @@ def group(record):
   if True and record.ssList and record.ssList[0] in adrg_ss:
     message('符合AD1入组条件，匹配规则：主手术匹配')
     
+    if MDCA_DRG.AD19_group(record):
+      return 'AD19'
+
     return 'AD1'
   else:
     return ''

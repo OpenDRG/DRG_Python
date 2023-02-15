@@ -1,7 +1,7 @@
-from drg_group.wuhan_2022.Base import messages,has_mcc,has_cc,intersect
-def ZC19_group(record):
-  return True
+from drg_group.wuhan_2022.Base import has_mcc,has_cc,intersect
 def ZB19_group(record):
+  return True
+def ZC19_group(record):
   return True
 def ZD19_group(record):
   return True

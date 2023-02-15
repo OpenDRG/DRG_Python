@@ -11,6 +11,9 @@ def group(record):
   if True and record.zdList[0] in adrg_zd and record.ssList and record.ssList[0] in adrg_ss:
     message('符合NG1入组条件，匹配规则：主诊断匹配、主手术匹配')
     
+    if MDCN_DRG.NG19_group(record):
+      return 'NG19'
+
     return 'NG1'
   else:
     return ''

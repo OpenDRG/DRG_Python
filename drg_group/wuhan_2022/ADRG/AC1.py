@@ -11,6 +11,9 @@ def group(record):
   if True and record.ssList and intersect(record.ssList,adrg_ss) and intersect(record.ssList,adrg_ss1):
     message('符合AC1入组条件，匹配规则：双手术匹配')
     
+    if MDCA_DRG.AC19_group(record):
+      return 'AC19'
+
     return 'AC1'
   else:
     return ''

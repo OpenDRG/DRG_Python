@@ -9,7 +9,7 @@ def group(record):
   dept_list=[]
   
   if True and record.ssList and intersect(record.ssList,adrg_ss) and intersect(record.ssList,adrg_ss1):
-    message('符合AH1入组条件，匹配规则：双手术匹配')
+    message('符合AH1_1入组条件，匹配规则：双手术匹配')
     
     if MDCA_DRG.AH11_group(record):
       return 'AH11'

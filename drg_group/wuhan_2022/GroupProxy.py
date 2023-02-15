@@ -179,19 +179,9 @@ class GroupProxy:
 
 if __name__ == "__main__":
   grouper=GroupProxy()
-  # grouper=GroupProxy(version='CHS_DRG_11',MESSAGES=1,DEBUG=1,TRANS_CODE=1)
-  # grouper=GroupProxy(version='ZJ_DRG_10',MESSAGES=1,DEBUG=1,TRANS_CODE=1)
-  # grouper=GroupProxy(region=DrgRegion.kunming,version=DrgVersion.CHS_DRG_10,year='2020',TRACE=1,MESSAGES=1,TRANS_CODE=1)
-  # grouper=GroupProxy(region='CN',version='CN_DRG_2018',DEBUG=1,TRANS_CODE=1)
   record=MedicalRecord(Index='1653890', age=10, ageDay=21, weight=3200, gender='2', dept='28',inHospitalTime=14,leavingType='1',
-    # zdList='K22.301,J94.801,J96.900x001,I10.x00x002', 
-    # ssList='42.0902,34.0401,42.8200,96.0800x004,96.0800x004,38.9301')
-    # zdList='I83.903,I83.900x004,R91.x02', 
-    # ssList='38.5901,39.9200')
-    # zdList='S06.500,I21.900x011,I62.001,G93.501,S06.202,I63.908,S02.900x002,J98.414,J96.000,J81.x00x002', 
-    # ssList='96.7201,01.2400x005,03.3100x001,33.2403,31.1x00x005,38.9301,38.9303')
-    zdList='I21.003',
-    ssList='36.0700')
+  zdList='S06.500,I21.900x011,I62.001,G93.501,S06.202,I63.908,S02.900x002,J98.414,J96.000,J81.x00x002', 
+  ssList='96.7201,01.2400x005,03.3100x001,33.2403,31.1x00x005,38.9301,38.9303')
   print(record)
   result=grouper.group(record)
   print(result)

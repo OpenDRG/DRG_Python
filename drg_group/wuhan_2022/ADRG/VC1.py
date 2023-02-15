@@ -11,6 +11,9 @@ def group(record):
   if True and record.ssList and record.ssList[0] in adrg_ss:
     message('符合VC1入组条件，匹配规则：主手术匹配')
     
+    if MDCV_DRG.VC19_group(record):
+      return 'VC19'
+
     return 'VC1'
   else:
     return ''
