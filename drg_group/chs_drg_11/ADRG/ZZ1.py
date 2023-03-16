@@ -8,7 +8,7 @@ def group(record):
   adrg_ss1=[]
   dept_list=[]
   
-  if True and (not record.ssList or record.ssList[0] not in SS_VALID):
+  if True and not intersect(record.ssList,SS_VALID):
     message('符合ZZ1入组条件，匹配规则：无手术')
     
     if MDCZ_DRG.ZZ11_group(record):

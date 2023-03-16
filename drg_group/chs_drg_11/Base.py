@@ -7,9 +7,10 @@ GroupResult=namedtuple('GroupResult','Index,status,messages,mdc,adrg,drg')
 
 MESSAGES=1
 TRACE=0
-messages=[]
+groupMessages=[]
 get_first_field=lambda x:x.replace('\n','').partition(' ')[0]
 spliter=lambda x:(x.partition(' ')[0],x.partition(' ')[-1].replace('\n',''))
+remove_last_zero=lambda x:x[:-2] if x.endswith('.0') else x
 
 class DrgGroupStatus(Enum):
   SUCCESS='分组成功'
@@ -84,7 +85,7 @@ def output(*args):
 
 def message(message):
   if MESSAGES:
-    messages.append(message)
+    groupMessages.append(message)
   output('-->',message)
 
 def has_mcc(main,others):

@@ -4,7 +4,7 @@ from drg_group.chs_drg_11.DRG import MDCF_DRG
 def group(record):
   adrg_zd=[]
   adrg_zd1=[]
-  adrg_ss=["36.0601","36.0602","36.0700x004","36.0701"]
+  adrg_ss=["36.0601","36.0602","36.0700x004","36.0701","36.0700"]
   adrg_ss1=[]
   dept_list=[]
   

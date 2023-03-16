@@ -4,7 +4,7 @@ from drg_group.chs_drg_11.GroupProxy import GroupProxy
 
 if __name__ == "__main__":
   grouper=GroupProxy()
-  # print(grouper.group_record("22058878,2,88,32460,,13040503,94,1,K80.302|K80.305|K83.109|K72.905|Z90.408|E14.900x001,51.8803|51.8701|54.5100x005|45.1301"))
+  # print(grouper.group_record('22136028,2.0,50.0,18624.0,,13030501.0,16.0,1.0,"D61.900,E03.900,I10.x00x002",00.1801,QJ15'))
   # sys.exit(-1)
   if len(sys.argv)==1:
     path=os.path.dirname(os.path.dirname(os.path.dirname(__file__)))

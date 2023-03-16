@@ -1,5 +1,5 @@
 import time
-from drg_group.chs_drg_11.Base import DrgGroupStatus,MedicalRecord,GroupResult,messages,output,DRG
+from drg_group.chs_drg_11.Base import DrgGroupStatus,MedicalRecord,GroupResult,groupMessages,output,DRG
 from drg_group.chs_drg_11.Grouper import group
 
 class Grouper_chs_drg_11:
@@ -20,8 +20,8 @@ class Grouper_chs_drg_11:
       return GroupResult(record.Index,DrgGroupStatus.SUCCESS.value,self.return_messages(),'MDC'+result[0],result[:3],result)
 
   def return_messages(self):
-    result=messages.copy()
-    messages.clear()
+    result=groupMessages.copy()
+    groupMessages.clear()
     for mdc in ['MDCA','MDCV','MDCX']:
       s='不符合%s的ADRG入组条件'%(mdc)
       if s in result:
