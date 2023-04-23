@@ -10,7 +10,7 @@ def group(record):
   message('符合MDCU入组条件，匹配规则：主诊断匹配')
 
 
-  if False and record.ssList and intersect(SS_VALID,record.ssList):
+  if False and record.ssList and record.ssList[0] in SS_VALID:
     message('符合UQY入组条件，存在有效手术操作：'+','.join(set(record.ssList).intersection(SS_VALID)))
     return 'UQY'
 

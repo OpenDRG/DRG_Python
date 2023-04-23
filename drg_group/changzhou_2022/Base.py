@@ -35,7 +35,7 @@ class DrgGroupStatus(Enum):
 class Reader:
   def __init__(self,folder):
     if not os.path.exists(os.path.join(os.path.dirname(__file__),folder)):
-      raise Exception('folder not exists:'+type)
+      raise Exception('folder not exists:'+folder)
     self.path=os.path.join(os.path.dirname(__file__),folder)
 
   def _from(self,collection):

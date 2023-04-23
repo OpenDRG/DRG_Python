@@ -43,7 +43,7 @@ def group(record):
   if result:
     return result
 
-  if record.ssList and intersect(SS_VALID,record.ssList):
+  if record.ssList and record.ssList[0] in SS_VALID:
     message('符合BQY入组条件，存在有效手术操作：'+','.join(set(record.ssList).intersection(SS_VALID)))
     return 'BQY'
 

@@ -8,8 +8,8 @@ def group(record):
   adrg_ss1=[]
   dept_list=[]
   
-  if True and record.zdList[0] in adrg_zd and record.weight and record.weight<1500 and record.ageDay!=None and record.ageDay<=28:
-    message('符合PS1入组条件，匹配规则：主诊断匹配、体重小于1500克、新生儿')
+  if True and intersect(record.zdList,adrg_zd) and record.weight and record.weight<1500 and record.ageDay!=None and record.ageDay<=28:
+    message('符合PS1入组条件，匹配规则：某一诊断匹配、体重小于1500克、新生儿')
     
     if MDCP_DRG.PS19_group(record):
       return 'PS19'
