@@ -6,19 +6,19 @@ def group(record):
   adrg_zd1=[]
   adrg_ss=[]
   adrg_ss1=[]
+  adrg_ss2=[]
   dept_list=[]
-  
   if True and record.zdList[0] in adrg_zd:
     message('符合EW1入组条件，匹配规则：主诊断匹配')
     
-    if MDCE_DRG.EW15_group(record):
-      return 'EW15'
+    if MDCE_DRG.EW11_group(record):
+      return 'EW11'
 
     if MDCE_DRG.EW13_group(record):
       return 'EW13'
 
-    if MDCE_DRG.EW11_group(record):
-      return 'EW11'
+    if MDCE_DRG.EW15_group(record):
+      return 'EW15'
 
     return 'EW1'
   else:

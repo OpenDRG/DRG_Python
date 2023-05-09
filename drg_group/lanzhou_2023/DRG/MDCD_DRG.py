@@ -72,9 +72,9 @@ def DW15_group(record):
 def DZ15_group(record):
   return True
 def DT1AA_group(record):
-  return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:])) and int(record.age)<14
+  return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:])) and record.age<14
 def DT15A_group(record):
-  return int(record.age)<14
+  return record.age<14
 def DT1AB_group(record):
   return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:]))
 def DT15B_group(record):

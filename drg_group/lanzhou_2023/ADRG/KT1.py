@@ -6,25 +6,25 @@ def group(record):
   adrg_zd1=[]
   adrg_ss=[]
   adrg_ss1=[]
+  adrg_ss2=[]
   dept_list=[]
-  
   if True and record.zdList[0] in adrg_zd:
     message('符合KT1入组条件，匹配规则：主诊断匹配')
     
-    if MDCK_DRG.KT15A_group(record):
-      return 'KT15A'
-
-    if MDCK_DRG.KT15B_group(record):
-      return 'KT15B'
-
-    if MDCK_DRG.KT13B_group(record):
-      return 'KT13B'
-
     if MDCK_DRG.KT11B_group(record):
       return 'KT11B'
 
     if MDCK_DRG.KT1AA_group(record):
       return 'KT12A'
+
+    if MDCK_DRG.KT13B_group(record):
+      return 'KT13B'
+
+    if MDCK_DRG.KT15A_group(record):
+      return 'KT15A'
+
+    if MDCK_DRG.KT15B_group(record):
+      return 'KT15B'
 
     return 'KT1'
   else:

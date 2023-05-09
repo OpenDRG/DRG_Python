@@ -6,10 +6,10 @@ def group(record):
   adrg_zd1=[]
   adrg_ss=["69.0200x003","73.1x01","73.1x02","74.9100","74.9100x001","74.9101","75.0x01","75.0x01x001","75.0x02"]
   adrg_ss1=[]
+  adrg_ss2=[]
   dept_list=[]
-  
-  if True and record.zdList[0] in adrg_zd and record.ssList and record.ssList[0] in adrg_ss:
-    message('符合OF1入组条件，匹配规则：主诊断匹配、主手术匹配')
+  if True and record.zdList[0] in adrg_zd and record.ssList and record.ssList[0] in adrg_ss and record.ssList and intersect(record.ssList,adrg_ss):
+    message('符合OF1入组条件，匹配规则：主诊断匹配、主手术匹配、某一手术匹配')
     
     if MDCO_DRG.OF19_group(record):
       return 'OF19'

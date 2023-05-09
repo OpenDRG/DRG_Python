@@ -6,16 +6,16 @@ def group(record):
   adrg_zd1=[]
   adrg_ss=[]
   adrg_ss1=[]
+  adrg_ss2=[]
   dept_list=[]
-  
   if True and record.zdList[0] in adrg_zd:
     message('符合ES2入组条件，匹配规则：主诊断匹配')
     
-    if MDCE_DRG.ES2B_group(record):
-      return 'ES24'
-
     if MDCE_DRG.ES21_group(record):
       return 'ES21'
+
+    if MDCE_DRG.ES2B_group(record):
+      return 'ES24'
 
     return 'ES2'
   else:

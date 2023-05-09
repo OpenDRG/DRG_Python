@@ -6,16 +6,16 @@ def group(record):
   adrg_zd1=[]
   adrg_ss=[]
   adrg_ss1=[]
+  adrg_ss2=[]
   dept_list=[]
-  
   if True and record.zdList[0] in adrg_zd:
     message('符合BU2入组条件，匹配规则：主诊断匹配')
     
-    if MDCB_DRG.BU2B_group(record):
-      return 'BU24'
-
     if MDCB_DRG.BU21_group(record):
       return 'BU21'
+
+    if MDCB_DRG.BU2B_group(record):
+      return 'BU24'
 
     return 'BU2'
   else:

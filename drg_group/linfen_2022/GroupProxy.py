@@ -133,7 +133,7 @@ class GroupProxy:
       if record.gender==None:
         self.message('病人性别为空')
         return DrgGroupStatus.CHECK_FAILED
-      if not (record.gender in [1,'1','男'] or record.gender in [2,'2','女']):
+      if record.gender not in ['1','2']:
         self.message('病人性别取值必须为1或2：{}'.format(record.gender))
         return DrgGroupStatus.CHECK_FAILED
       if record.age==None:

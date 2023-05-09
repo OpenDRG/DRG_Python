@@ -6,16 +6,16 @@ def group(record):
   adrg_zd1=[]
   adrg_ss=["00.1500x001","00.1500x002","99.2500x017","99.2500x036","99.2500x037","99.2502","99.2503","99.2504","99.2505","99.2506","99.2800x003","99.2801"]
   adrg_ss1=[]
+  adrg_ss2=[]
   dept_list=[]
-  
-  if True and intersect(record.zdList,adrg_zd) and record.ssList and record.ssList[0] in adrg_ss:
-    message('符合RB1入组条件，匹配规则：某一诊断匹配、主手术匹配')
+  if True and record.zdList[0] in adrg_zd and record.ssList and record.ssList[0] in adrg_ss and record.ssList and intersect(record.ssList,adrg_ss):
+    message('符合RB1入组条件，匹配规则：主诊断匹配、主手术匹配、某一手术匹配')
     
-    if MDCR_DRG.RB1B_group(record):
-      return 'RB14'
-
     if MDCR_DRG.RB11_group(record):
       return 'RB11'
+
+    if MDCR_DRG.RB1B_group(record):
+      return 'RB14'
 
     return 'RB1'
   else:

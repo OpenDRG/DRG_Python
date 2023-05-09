@@ -6,19 +6,19 @@ def group(record):
   adrg_zd1=[]
   adrg_ss=[]
   adrg_ss1=[]
+  adrg_ss2=[]
   dept_list=[]
-  
   if True and record.zdList[0] in adrg_zd:
     message('符合BT1入组条件，匹配规则：主诊断匹配')
     
-    if MDCB_DRG.BT15_group(record):
-      return 'BT15'
+    if MDCB_DRG.BT11_group(record):
+      return 'BT11'
 
     if MDCB_DRG.BT13_group(record):
       return 'BT13'
 
-    if MDCB_DRG.BT11_group(record):
-      return 'BT11'
+    if MDCB_DRG.BT15_group(record):
+      return 'BT15'
 
     return 'BT1'
   else:

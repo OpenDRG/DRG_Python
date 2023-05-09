@@ -6,16 +6,16 @@ def group(record):
   adrg_zd1=[]
   adrg_ss=[]
   adrg_ss1=[]
+  adrg_ss2=[]
   dept_list=[]
-  
   if True and record.zdList[0] in adrg_zd:
     message('符合VR1入组条件，匹配规则：主诊断匹配')
     
-    if MDCV_DRG.VR1B_group(record):
-      return 'VR14'
-
     if MDCV_DRG.VR11_group(record):
       return 'VR11'
+
+    if MDCV_DRG.VR1B_group(record):
+      return 'VR14'
 
     return 'VR1'
   else:

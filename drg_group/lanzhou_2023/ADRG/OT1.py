@@ -6,19 +6,19 @@ def group(record):
   adrg_zd1=[]
   adrg_ss=[]
   adrg_ss1=[]
+  adrg_ss2=[]
   dept_list=[]
-  
   if True and record.zdList[0] in adrg_zd:
     message('符合OT1入组条件，匹配规则：主诊断匹配')
     
-    if MDCO_DRG.OT15_group(record):
-      return 'OT15'
+    if MDCO_DRG.OT11_group(record):
+      return 'OT11'
 
     if MDCO_DRG.OT13_group(record):
       return 'OT13'
 
-    if MDCO_DRG.OT11_group(record):
-      return 'OT11'
+    if MDCO_DRG.OT15_group(record):
+      return 'OT15'
 
     return 'OT1'
   else:

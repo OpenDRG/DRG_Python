@@ -6,19 +6,19 @@ def group(record):
   adrg_zd1=[]
   adrg_ss=[]
   adrg_ss1=[]
+  adrg_ss2=[]
   dept_list=[]
-  
   if True and record.zdList[0] in adrg_zd:
     message('符合HZ1入组条件，匹配规则：主诊断匹配')
     
+    if MDCH_DRG.HZ11_group(record):
+      return 'HZ11'
+
     if MDCH_DRG.HZ13_group(record):
       return 'HZ13'
 
     if MDCH_DRG.HZ15_group(record):
       return 'HZ15'
-
-    if MDCH_DRG.HZ11_group(record):
-      return 'HZ11'
 
     return 'HZ1'
   else:

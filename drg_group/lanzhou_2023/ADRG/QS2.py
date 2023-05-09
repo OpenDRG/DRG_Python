@@ -6,16 +6,16 @@ def group(record):
   adrg_zd1=[]
   adrg_ss=[]
   adrg_ss1=[]
+  adrg_ss2=[]
   dept_list=[]
-  
   if True and record.zdList[0] in adrg_zd:
     message('符合QS2入组条件，匹配规则：主诊断匹配')
     
-    if MDCQ_DRG.QS2B_group(record):
-      return 'QS24'
-
     if MDCQ_DRG.QS21_group(record):
       return 'QS21'
+
+    if MDCQ_DRG.QS2B_group(record):
+      return 'QS24'
 
     return 'QS2'
   else:

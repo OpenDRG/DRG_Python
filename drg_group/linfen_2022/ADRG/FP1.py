@@ -6,10 +6,10 @@ def group(record):
   adrg_zd1=[]
   adrg_ss=["37.6101","37.6600x001","37.6800x001","37.6800x002","37.6800x003","37.6800x005","39.9500x004","39.9500x005","39.9500x006","39.9500x007","39.9501","39.9600x002","39.9600x003","96.7101"]
   adrg_ss1=[]
+  adrg_ss2=[]
   dept_list=[]
-  
-  if True and record.zdList[0] in adrg_zd and record.ssList and record.ssList[0] in adrg_ss:
-    message('符合FP1入组条件，匹配规则：主诊断匹配、主手术匹配')
+  if True and record.zdList[0] in adrg_zd and record.ssList and record.ssList[0] in adrg_ss and record.ssList and intersect(record.ssList,adrg_ss):
+    message('符合FP1入组条件，匹配规则：主诊断匹配、主手术匹配、某一手术匹配')
     
     if MDCF_DRG.FP19_group(record):
       return 'FP19'

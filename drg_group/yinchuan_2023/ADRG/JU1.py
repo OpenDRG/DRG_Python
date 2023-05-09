@@ -1,0 +1,26 @@
+from drg_group.yinchuan_2023.Base import message,intersect,SS_VALID
+from drg_group.yinchuan_2023.DRG import MDCJ_DRG
+
+def group(record):
+  adrg_zd=["A46.x00","B00.102","B09.x01","I89.100x002","L02.100","L02.200","L02.200x009","L02.200x010","L02.201","L02.202","L02.203","L02.205","L02.206","L02.401","L02.402","L02.403","L02.800","L02.801","L02.900x001","L02.901","L02.902","L03.000","L03.000x015","L05.000","L08.000x001","L08.803","L08.901","L08.902","L08.903","L08.904","L08.905"]
+  adrg_zd1=[]
+  adrg_ss=[]
+  adrg_ss1=[]
+  adrg_ss2=[]
+  dept_list=[]
+  if True and record.zdList[0] in adrg_zd:
+    message('符合JU1入组条件，匹配规则：主诊断匹配')
+    
+    if MDCJ_DRG.JU11_group(record):
+      return 'JU11'
+
+    if MDCJ_DRG.JU13_group(record):
+      return 'JU13'
+
+    if MDCJ_DRG.JU15_group(record):
+      return 'JU15'
+
+    return 'JU1'
+  else:
+    return ''
+

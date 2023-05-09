@@ -6,16 +6,16 @@ def group(record):
   adrg_zd1=[]
   adrg_ss=[]
   adrg_ss1=[]
+  adrg_ss2=[]
   dept_list=[]
-  
   if True and record.zdList[0] in adrg_zd:
     message('符合QT1入组条件，匹配规则：主诊断匹配')
     
-    if MDCQ_DRG.QT13_group(record):
-      return 'QT13'
-
     if MDCQ_DRG.QT11_group(record):
       return 'QT11'
+
+    if MDCQ_DRG.QT13_group(record):
+      return 'QT13'
 
     if MDCQ_DRG.QT15_group(record):
       return 'QT15'

@@ -6,19 +6,19 @@ def group(record):
   adrg_zd1=[]
   adrg_ss=[]
   adrg_ss1=[]
+  adrg_ss2=[]
   dept_list=[]
-  
   if True and record.zdList[0] in adrg_zd:
     message('符合KU1入组条件，匹配规则：主诊断匹配')
     
+    if MDCK_DRG.KU11_group(record):
+      return 'KU11'
+
     if MDCK_DRG.KU13_group(record):
       return 'KU13'
 
     if MDCK_DRG.KU15_group(record):
       return 'KU15'
-
-    if MDCK_DRG.KU11_group(record):
-      return 'KU11'
 
     return 'KU1'
   else:

@@ -152,9 +152,9 @@ def BY25_group(record):
 def BZ15_group(record):
   return True
 def BV1AA_group(record):
-  return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:])) and int(record.age)<14
+  return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:])) and record.age<14
 def BV15A_group(record):
-  return int(record.age)<14
+  return record.age<14
 def BV11B_group(record):
   return len(record.zdList)>1 and has_mcc(record.zdList[0],record.zdList[1:])
 def BV13B_group(record):

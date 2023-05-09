@@ -6,10 +6,10 @@ def group(record):
   adrg_zd1=[]
   adrg_ss=["40.2400","40.2900x028","40.5400x001","40.5400x002","40.5400x003","40.5900x010","40.5907","57.7102","60.0x00x001","60.0x03","60.2100x001","60.3x01","60.4x01","60.5x01","60.5x02","60.6100x002","60.6101","60.6200","60.6201","60.6900x001","60.6900x002","62.0x00x001","62.2x00x002","62.2x01","62.3x00","62.3x01","62.3x02","62.4100x004","62.4101","62.4102","62.4103","64.3x01","64.3x02"]
   adrg_ss1=[]
+  adrg_ss2=[]
   dept_list=[]
-  
-  if True and record.zdList[0] in adrg_zd and record.ssList and record.ssList[0] in adrg_ss:
-    message('符合MA1入组条件，匹配规则：主诊断匹配、主手术匹配')
+  if True and record.zdList[0] in adrg_zd and record.ssList and record.ssList[0] in adrg_ss and record.ssList and intersect(record.ssList,adrg_ss):
+    message('符合MA1入组条件，匹配规则：主诊断匹配、主手术匹配、某一手术匹配')
     
     if MDCM_DRG.MA19_group(record):
       return 'MA19'

@@ -6,10 +6,10 @@ def group(record):
   adrg_zd1=[]
   adrg_ss=["01.2600","01.2700","01.2800","38.0100x001","38.1100","38.3000","38.3000x001","38.3100","38.3100x001","38.3101","38.4000","38.4100","38.6100x002","38.6101","38.6102","38.8000","38.8100x004","38.8101","39.2801","39.2802","39.5100x004","39.5100x007","39.5101","39.5102","39.5103","39.5104","39.5105","39.5106","39.5107","39.5108","39.5200x002","39.5200x003","39.5202","39.5203"]
   adrg_ss1=[]
+  adrg_ss2=[]
   dept_list=[]
-  
-  if True and record.zdList[0] in adrg_zd and record.ssList and record.ssList[0] in adrg_ss:
-    message('符合BC1入组条件，匹配规则：主诊断匹配、主手术匹配')
+  if True and record.zdList[0] in adrg_zd and record.ssList and record.ssList[0] in adrg_ss and record.ssList and intersect(record.ssList,adrg_ss):
+    message('符合BC1入组条件，匹配规则：主诊断匹配、主手术匹配、某一手术匹配')
     
     if MDCB_DRG.BC19_group(record):
       return 'BC19'

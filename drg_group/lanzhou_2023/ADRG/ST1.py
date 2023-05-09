@@ -6,19 +6,19 @@ def group(record):
   adrg_zd1=[]
   adrg_ss=[]
   adrg_ss1=[]
+  adrg_ss2=[]
   dept_list=[]
-  
   if True and record.zdList[0] in adrg_zd:
     message('符合ST1入组条件，匹配规则：主诊断匹配')
     
+    if MDCS_DRG.ST11_group(record):
+      return 'ST11'
+
     if MDCS_DRG.ST13_group(record):
       return 'ST13'
 
     if MDCS_DRG.ST15_group(record):
       return 'ST15'
-
-    if MDCS_DRG.ST11_group(record):
-      return 'ST11'
 
     return 'ST1'
   else:

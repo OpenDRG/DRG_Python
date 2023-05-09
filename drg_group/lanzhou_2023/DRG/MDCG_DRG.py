@@ -102,13 +102,13 @@ def GV15_group(record):
 def GZ15_group(record):
   return True
 def GE1AA_group(record):
-  return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:])) and int(record.age)<14
+  return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:])) and record.age<14
 def GW1AA_group(record):
-  return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:])) and int(record.age)<14
+  return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:])) and record.age<14
 def GE15A_group(record):
-  return int(record.age)<14
+  return record.age<14
 def GW15A_group(record):
-  return int(record.age)<14
+  return record.age<14
 def GE1AB_group(record):
   return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:]))
 def GW1AB_group(record):

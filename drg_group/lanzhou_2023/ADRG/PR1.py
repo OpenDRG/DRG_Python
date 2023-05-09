@@ -6,16 +6,16 @@ def group(record):
   adrg_zd1=[]
   adrg_ss=[]
   adrg_ss1=[]
+  adrg_ss2=[]
   dept_list=[]
-  
   if True and record.zdList[0] in adrg_zd and record.ageDay!=None and record.ageDay<=28:
     message('符合PR1入组条件，匹配规则：主诊断匹配、新生儿')
     
-    if MDCP_DRG.PR1B_group(record):
-      return 'PR14'
-
     if MDCP_DRG.PR11_group(record):
       return 'PR11'
+
+    if MDCP_DRG.PR1B_group(record):
+      return 'PR14'
 
     return 'PR1'
   else:

@@ -6,16 +6,16 @@ def group(record):
   adrg_zd1=[]
   adrg_ss=[]
   adrg_ss1=[]
+  adrg_ss2=[]
   dept_list=[]
-  
   if True and record.zdList[0] in adrg_zd:
     message('符合FT3入组条件，匹配规则：主诊断匹配')
     
-    if MDCF_DRG.FT3B_group(record):
-      return 'FT34'
-
     if MDCF_DRG.FT31_group(record):
       return 'FT31'
+
+    if MDCF_DRG.FT3B_group(record):
+      return 'FT34'
 
     return 'FT3'
   else:

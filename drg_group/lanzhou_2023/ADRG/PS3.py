@@ -6,8 +6,8 @@ def group(record):
   adrg_zd1=[]
   adrg_ss=[]
   adrg_ss1=[]
+  adrg_ss2=[]
   dept_list=[]
-  
   if True and intersect(record.zdList,adrg_zd) and record.weight and record.weight>=2000 and record.weight<2500 and record.ageDay!=None and record.ageDay<=28:
     message('符合PS3入组条件，匹配规则：某一诊断匹配、体重2000至2500克、新生儿')
     

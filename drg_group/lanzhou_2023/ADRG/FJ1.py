@@ -6,16 +6,16 @@ def group(record):
   adrg_zd1=[]
   adrg_ss=["00.6700x001","00.6701","37.0x00x002","37.0x01","37.2400","37.2401","37.2501","37.7901","37.7902"]
   adrg_ss1=[]
+  adrg_ss2=[]
   dept_list=[]
-  
-  if True and record.ssList and record.ssList[0] in adrg_ss:
-    message('符合FJ1入组条件，匹配规则：主手术匹配')
+  if True and record.ssList and record.ssList[0] in adrg_ss and record.ssList and intersect(record.ssList,adrg_ss):
+    message('符合FJ1入组条件，匹配规则：主手术匹配、某一手术匹配')
     
-    if MDCF_DRG.FJ13_group(record):
-      return 'FJ13'
-
     if MDCF_DRG.FJ11_group(record):
       return 'FJ11'
+
+    if MDCF_DRG.FJ13_group(record):
+      return 'FJ13'
 
     if MDCF_DRG.FJ15_group(record):
       return 'FJ15'

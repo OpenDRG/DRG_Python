@@ -6,10 +6,10 @@ def group(record):
   adrg_zd1=[]
   adrg_ss=["00.5000x001","00.5000x004","00.5000x005","00.5001","00.5002","00.5100x001","00.5101","00.5102","00.5301","00.5302","00.5401","00.5402"]
   adrg_ss1=[]
+  adrg_ss2=[]
   dept_list=[]
-  
-  if True and record.zdList[0] in adrg_zd and record.ssList and record.ssList[0] in adrg_ss:
-    message('符合FK1入组条件，匹配规则：主诊断匹配、主手术匹配')
+  if True and record.zdList[0] in adrg_zd and record.ssList and record.ssList[0] in adrg_ss and record.ssList and intersect(record.ssList,adrg_ss):
+    message('符合FK1入组条件，匹配规则：主诊断匹配、主手术匹配、某一手术匹配')
     
     if MDCF_DRG.FK19_group(record):
       return 'FK19'

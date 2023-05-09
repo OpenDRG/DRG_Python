@@ -6,28 +6,28 @@ def group(record):
   adrg_zd1=[]
   adrg_ss=[]
   adrg_ss1=[]
+  adrg_ss2=[]
   dept_list=[]
-  
   if True and record.zdList[0] in adrg_zd:
     message('符合SV1入组条件，匹配规则：主诊断匹配')
     
-    if MDCS_DRG.SV15A_group(record):
-      return 'SV15A'
-
-    if MDCS_DRG.SV13B_group(record):
-      return 'SV13B'
-
-    if MDCS_DRG.SV15B_group(record):
-      return 'SV15B'
-
-    if MDCS_DRG.SV13A_group(record):
-      return 'SV13A'
+    if MDCS_DRG.SV11A_group(record):
+      return 'SV11A'
 
     if MDCS_DRG.SV11B_group(record):
       return 'SV11B'
 
-    if MDCS_DRG.SV11A_group(record):
-      return 'SV11A'
+    if MDCS_DRG.SV13A_group(record):
+      return 'SV13A'
+
+    if MDCS_DRG.SV13B_group(record):
+      return 'SV13B'
+
+    if MDCS_DRG.SV15A_group(record):
+      return 'SV15A'
+
+    if MDCS_DRG.SV15B_group(record):
+      return 'SV15B'
 
     return 'SV1'
   else:

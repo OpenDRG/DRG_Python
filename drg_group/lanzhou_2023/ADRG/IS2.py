@@ -6,19 +6,19 @@ def group(record):
   adrg_zd1=[]
   adrg_ss=[]
   adrg_ss1=[]
+  adrg_ss2=[]
   dept_list=[]
-  
   if True and record.zdList[0] in adrg_zd:
     message('符合IS2入组条件，匹配规则：主诊断匹配')
     
-    if MDCI_DRG.IS25_group(record):
-      return 'IS25'
+    if MDCI_DRG.IS21_group(record):
+      return 'IS21'
 
     if MDCI_DRG.IS23_group(record):
       return 'IS23'
 
-    if MDCI_DRG.IS21_group(record):
-      return 'IS21'
+    if MDCI_DRG.IS25_group(record):
+      return 'IS25'
 
     return 'IS2'
   else:

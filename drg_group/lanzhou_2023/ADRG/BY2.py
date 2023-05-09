@@ -6,19 +6,19 @@ def group(record):
   adrg_zd1=[]
   adrg_ss=[]
   adrg_ss1=[]
+  adrg_ss2=[]
   dept_list=[]
-  
   if True and record.zdList[0] in adrg_zd:
     message('符合BY2入组条件，匹配规则：主诊断匹配')
     
-    if MDCB_DRG.BY25_group(record):
-      return 'BY25'
+    if MDCB_DRG.BY21_group(record):
+      return 'BY21'
 
     if MDCB_DRG.BY23_group(record):
       return 'BY23'
 
-    if MDCB_DRG.BY21_group(record):
-      return 'BY21'
+    if MDCB_DRG.BY25_group(record):
+      return 'BY25'
 
     return 'BY2'
   else:
