@@ -4,7 +4,7 @@ from drg_group.zhejiang_2022.ADRG import AA1,AB1,AC1,AD1,AE1,AF1,AG1,AG2,AH1
 def group(record):
   mdc_zd=[]
   dept_list=[]
-  if not (True and record.ssList and record.ssList[0] in SS_VALID):
+  if not (True and record.ssList and (record.ssList[0] in SS_VALID or record.ssList[0] in ["96.0400","96.7201"])):
     return ''
   
   message('符合MDCA入组条件，匹配规则：存在手术')

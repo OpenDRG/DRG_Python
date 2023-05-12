@@ -9,6 +9,14 @@ class Grouper_zhejiang_2022:
 
   def group(self,record):
     result=group(record)
+    
+    if result=='0000' and record.ssList and len(record.ssList)>1:
+      for ss in record.ssList[1:]:
+        record=record._replace(ssList=[ss])
+        result=group(record)
+        if result!='0000':
+          break
+
     output('***',result,DRG.get(result,DrgGroupStatus.FAIL.value),'***')
     if result=='0000':
       return GroupResult(record.Index,DrgGroupStatus.FAIL.value,self.return_messages(),'0000','00','0000')

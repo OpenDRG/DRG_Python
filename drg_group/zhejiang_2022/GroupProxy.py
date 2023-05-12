@@ -130,26 +130,26 @@ class GroupProxy:
 
   def check(self,record):
     try:
-      if record.gender==None:
+      if record.gender==None or record.gender=='':
         self.message('病人性别为空')
         return DrgGroupStatus.CHECK_FAILED
-      if not (record.gender in [1,'1','男'] or record.gender in [2,'2','女']):
+      if record.gender not in ['1','2']:
         self.message('病人性别取值必须为1或2：{}'.format(record.gender))
         return DrgGroupStatus.CHECK_FAILED
-      if record.age==None:
+      if record.age==None or record.age=='':
         self.message('病人年龄为空')
         return DrgGroupStatus.CHECK_FAILED
-      if int(record.age)==0 and record.ageDay==None:
+      if int(record.age)==0 and (record.ageDay==None or record.ageDay==''):
         self.message('病人年龄0时，年龄天数必须有值')
         return DrgGroupStatus.CHECK_FAILED
-      if int(record.age)==0 and int(record.ageDay)<=28 and record.weight==None:
+      if int(record.age)==0 and int(record.ageDay)<=28 and (record.weight==None or record.weight==''):
         self.message('新生儿的出生体重必须有值')
         return DrgGroupStatus.CHECK_FAILED
       if not record.zdList:
         self.message('诊断信息为空')
         return DrgGroupStatus.CHECK_FAILED
-    except:
-      self.message('病案信息解析出错')
+    except Exception as e:
+      self.message('病案信息解析出错：{}'.format(e))
       return DrgGroupStatus.CHECK_FAILED
     for x in record.zdList:
       self.message('{} {}'.format(x,self.ZD_INFO.get(x,'未知名称')))
@@ -159,22 +159,25 @@ class GroupProxy:
 
   def group_record(self,record_str):
     record=MedicalRecord(**dict(zip(MedicalRecord._fields,map(remove_last_zero,replace_csv(record_str).split(',')))))
+    record=record._replace(age=int(record.age),ageDay=int(record.ageDay) if record.ageDay!='' else 0,
+                           weight=int(record.weight) if record.weight!='' else 0,inHospitalTime=int(record.inHospitalTime))
     return self.group(record)
 
   def group_txt(self):
     path=os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
-    lines=open(os.path.join(path,'input.txt')).read().splitlines()
+    lines=open(os.path.join(path,'input.txt'),encoding='utf-8').read().splitlines()
     if len(lines)==0:
       print('input.txt文件无数据')
       sys.exit(-1)
-    file=open(os.path.join(path,'output.txt'),'w')
+    file=open(os.path.join(path,'output.txt'),'w',encoding='utf-8')
     for line in lines[1:]:
       file.write(str(self.group_record(line))+'\n')
 
   def group_csv(self,filename,cols):
-    filename=filename.replace('.csv','_python_result.csv')
     import pandas as pd
-    df=pd.read_csv(filename,index_col=cols[0])
+    cols=cols.split(',')
+    df=pd.read_csv(filename,index_col=cols[0],dtype=dict(zip(cols[:2]+[cols[5]]+[cols[7]],[str]*4)))
+    filename=filename.replace('.csv','_python_result.csv')
     self.group_df(df,open(filename,'w',encoding='utf-8-sig'),cols)
 
 def replace_csv(csv):

@@ -15,10 +15,12 @@ def AG19_group(record):
   return True
 def AG29_group(record):
   return True
-def AH13_group(record):
-  return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:]))
+def AH1B_group(record):
+  return True
 def AH11_group(record):
   return record.ssList and '39.6500' in record.ssList
+def AH13_group(record):
+  return record.ssList and '96.7201' in record.ssList and '39.9500x007' in record.ssList
 def AH19_group(record):
-  return record.ssList and intersect(record.ssList,['31.1x00x005','31.2100x001','31.2900x001','96.0400']) and '96.7201' in record.ssList
+  return record.ssList and '96.7201' in record.ssList
 

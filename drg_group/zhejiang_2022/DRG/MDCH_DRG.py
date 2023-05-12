@@ -39,8 +39,6 @@ def HZ31_group(record):
   return len(record.zdList)>1 and has_mcc(record.zdList[0],record.zdList[1:])
 def HB13_group(record):
   return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:]))
-def HC13_group(record):
-  return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:]))
 def HC23_group(record):
   return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:]))
 def HC33_group(record):
@@ -48,8 +46,6 @@ def HC33_group(record):
 def HC43_group(record):
   return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:]))
 def HJ13_group(record):
-  return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:]))
-def HK13_group(record):
   return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:]))
 def HL13_group(record):
   return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:]))
@@ -73,6 +69,10 @@ def HZ23_group(record):
   return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:]))
 def HZ33_group(record):
   return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:]))
+def HC1B_group(record):
+  return True
+def HK1B_group(record):
+  return True
 def HB15_group(record):
   return True
 def HC25_group(record):

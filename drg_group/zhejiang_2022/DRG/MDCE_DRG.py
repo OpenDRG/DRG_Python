@@ -5,8 +5,6 @@ def EX10_group(record):
     return record.age<17
 def ES19_group(record):
   return True
-def ES29_group(record):
-  return True
 def EV19_group(record):
   return True
 def EW19_group(record):
@@ -99,4 +97,6 @@ def EX15_group(record):
   return True
 def EZ15_group(record):
   return True
+def ES29_group(record):
+  return record.dept=='ICU'
 

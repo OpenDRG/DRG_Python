@@ -7,10 +7,6 @@ def BE29_group(record):
   return True
 def BM19_group(record):
   return True
-def BR19_group(record):
-  return True
-def BR29_group(record):
-  return True
 def BS19_group(record):
   return True
 def BV29_group(record):
@@ -145,4 +141,8 @@ def BY35_group(record):
   return True
 def BZ15_group(record):
   return True
+def BR19_group(record):
+  return record.dept=='ICU'
+def BR29_group(record):
+  return record.dept=='ICU'
 

@@ -1,8 +1,6 @@
 from drg_group.zhejiang_2022.Base import has_mcc,has_cc,intersect
 def VC19_group(record):
   return True
-def VS29_group(record):
-  return True
 def VT19_group(record):
   return True
 def VB11_group(record):
@@ -41,4 +39,6 @@ def VS25_group(record):
   return True
 def VZ15_group(record):
   return True
+def VS29_group(record):
+  return record.dept=='ICU'
 

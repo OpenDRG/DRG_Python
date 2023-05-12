@@ -7,8 +7,8 @@ def YR21_group(record):
   return len(record.zdList)>1 and has_mcc(record.zdList[0],record.zdList[1:])
 def YR13_group(record):
   return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:]))
-def YR23_group(record):
-  return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:]))
+def YR2B_group(record):
+  return True
 def YR15_group(record):
   return True
 

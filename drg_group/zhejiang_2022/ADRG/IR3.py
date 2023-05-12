@@ -6,9 +6,9 @@ def group(record):
   adrg_zd1=[]
   adrg_ss=[]
   adrg_ss1=[]
+  adrg_ss2=[]
   dept_list=[]
-  
-  if True and record.zdList[0] in adrg_zd:
+  if True and record.zdList[0] in adrg_zd and (not record.ssList or not record.ssList[0] in SS_VALID):
     message('符合IR3入组条件，匹配规则：主诊断匹配')
     
     if MDCI_DRG.IR31_group(record):
@@ -20,7 +20,7 @@ def group(record):
     if MDCI_DRG.IR35_group(record):
       return 'IR35'
 
-    return 'IR3'
+    return ''
   else:
     return ''
 

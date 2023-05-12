@@ -6,9 +6,9 @@ def group(record):
   adrg_zd1=[]
   adrg_ss=[]
   adrg_ss1=[]
+  adrg_ss2=[]
   dept_list=[]
-  
-  if True and record.zdList[0] in adrg_zd and record.weight and record.weight<1500 and record.ageDay!=None and record.ageDay<=28:
+  if True and record.zdList[0] in adrg_zd and (not record.ssList or not record.ssList[0] in SS_VALID) and record.weight and record.weight<1500 and record.ageDay!=None and record.ageDay<=28:
     message('符合PS1入组条件，匹配规则：主诊断匹配、体重小于1500克、新生儿')
     
     if MDCP_DRG.PS11_group(record):
@@ -17,7 +17,7 @@ def group(record):
     if MDCP_DRG.PS19_group(record):
       return 'PS19'
 
-    return 'PS1'
+    return ''
   else:
     return ''
 

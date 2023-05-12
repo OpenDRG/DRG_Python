@@ -19,12 +19,6 @@ def FL19_group(record):
   return True
 def FL29_group(record):
   return True
-def FR19_group(record):
-  return True
-def FR29_group(record):
-  return True
-def FU19_group(record):
-  return True
 def FB21_group(record):
   return len(record.zdList)>1 and has_mcc(record.zdList[0],record.zdList[1:])
 def FB31_group(record):
@@ -133,8 +127,6 @@ def FS13_group(record):
   return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:]))
 def FT13_group(record):
   return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:]))
-def FT23_group(record):
-  return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:]))
 def FT33_group(record):
   return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:]))
 def FU13_group(record):
@@ -155,6 +147,8 @@ def FW23_group(record):
   return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:]))
 def FZ13_group(record):
   return len(record.zdList)>1 and (has_mcc(record.zdList[0],record.zdList[1:]) or has_cc(record.zdList[0],record.zdList[1:]))
+def FT2B_group(record):
+  return True
 def FB25_group(record):
   return True
 def FB35_group(record):
@@ -219,4 +213,10 @@ def FW25_group(record):
   return True
 def FZ15_group(record):
   return True
+def FR19_group(record):
+  return record.dept=='ICU'
+def FR29_group(record):
+  return record.dept=='ICU'
+def FU19_group(record):
+  return record.dept=='ICU'
 

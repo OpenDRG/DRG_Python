@@ -1,8 +1,6 @@
 from drg_group.zhejiang_2022.Base import has_mcc,has_cc,intersect
 def SB19_group(record):
   return True
-def SR19_group(record):
-  return True
 def SR11_group(record):
   return len(record.zdList)>1 and has_mcc(record.zdList[0],record.zdList[1:])
 def SS11_group(record):
@@ -39,4 +37,6 @@ def SV15_group(record):
   return True
 def SZ15_group(record):
   return True
+def SR19_group(record):
+  return record.dept=='ICU'
 

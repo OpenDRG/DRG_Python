@@ -6,18 +6,18 @@ def group(record):
   adrg_zd1=[]
   adrg_ss=[]
   adrg_ss1=[]
+  adrg_ss2=[]
   dept_list=[]
-  
-  if True and record.zdList[0] in adrg_zd:
+  if True and record.zdList[0] in adrg_zd and (not record.ssList or not record.ssList[0] in SS_VALID):
     message('符合YR2入组条件，匹配规则：主诊断匹配')
     
     if MDCY_DRG.YR21_group(record):
       return 'YR21'
 
-    if MDCY_DRG.YR23_group(record):
+    if MDCY_DRG.YR2B_group(record):
       return 'YR23'
 
-    return 'YR2'
+    return ''
   else:
     return ''
 
