@@ -29,6 +29,7 @@
 |drg_group/xjbt_2022|新疆兵团版|
 |drg_group/yunan_2022|云南版|
 |drg_group/haerbin_2022|哈尔滨版|
+|drg_group/anyang_2021|安阳版|
 
 &emsp;&emsp;其他地区版本的分组器将逐步发布，敬请关注
 
