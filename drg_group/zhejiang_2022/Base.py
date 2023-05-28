@@ -13,11 +13,6 @@ spliter=lambda x:(x.partition(' ')[0],x.partition(' ')[-1].replace('\n',''))
 remove_last_zero=lambda x:x[:-2] if x.endswith('.0') else x
 
 class DrgGroupStatus(Enum):
-  SUCCESS='分组成功'
-  FAIL='无法入组'
-  QY='歧义病案'
-
-class DrgGroupStatus(Enum):
   CHECK_FAILED='信息校验不通过'
   SUCCESS='分组成功'
   FAIL='无法入组'

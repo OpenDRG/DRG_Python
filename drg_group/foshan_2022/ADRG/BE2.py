@@ -1,0 +1,37 @@
+from drg_group.foshan_2022.Base import message,intersect,SS_VALID
+from drg_group.foshan_2022.DRG import MDCB_DRG
+from drg_group.foshan_2022.DRG_EX import BE21,BE22
+
+def group(record):
+  adrg_zd=[]
+  adrg_zd1=[]
+  adrg_ss=["00.5501","00.6100x008","00.6100x012","00.6101","00.6102","00.6200x005","00.6200x006","00.6200x007","00.6200x008","00.6200x009","00.6201","00.6202","00.6300","00.6300x005","00.6300x006","00.6300x007","00.6301","00.6400x009","00.6400x012","00.6400x013","00.6400x014","00.6401","00.6500x008","00.6500x010","00.6500x011","00.6500x012","00.6500x013","00.6501","17.5301","17.5400","39.7200x001","39.7200x004","39.7200x005","39.7200x007","39.7200x008","39.7200x018","39.7201","39.7202","39.7203","39.7205","39.7206","39.7208","39.7209","39.7211","39.7213","39.7213","39.7215","39.7216","39.7400x001","39.7400x002","39.7400x002","39.7400x003","39.7400x004","39.7401","39.7501","39.7501","39.7502","39.7503","39.7503","39.7504","39.7504","39.7505","39.7505","39.7506","39.7506","39.7601","39.7601","39.7603","39.7604","39.7605","39.7606","39.7908","39.7909","39.8900x001","39.9000x034","39.9008"]
+  adrg_ss1=[]
+  adrg_ss2=[]
+  dept_list=[]
+  if True and record.ssList and record.ssList[0] in adrg_ss and record.ssList and intersect(record.ssList,adrg_ss):
+    message('符合BE2入组条件，匹配规则：主手术匹配、某一手术匹配')
+    
+    if BE21.group(record):
+      return 'BE21'
+
+    if BE22.group(record):
+      return 'BE22'
+
+    
+    if MDCB_DRG.BE20_group(record):
+      return 'BE20'
+
+    if MDCB_DRG.BE23_group(record):
+      return 'BE23'
+
+    if MDCB_DRG.BE25_group(record):
+      return 'BE25'
+
+    if MDCB_DRG.BE26_group(record):
+      return 'BE26'
+
+    return ''
+  else:
+    return ''
+
