@@ -15,17 +15,8 @@ def group(record):
     if MDCS_DRG.SR10_group(record):
       return 'SR10'
 
-    if MDCS_DRG.SR11_group(record):
-      return 'SR11'
-
     if MDCS_DRG.SR12_group(record):
       return 'SR12'
-
-    if MDCS_DRG.SR13_group(record):
-      return 'SR13'
-
-    if MDCS_DRG.SR15_group(record):
-      return 'SR15'
 
     if MDCS_DRG.SR16_group(record):
       return 'SR16'
@@ -35,6 +26,15 @@ def group(record):
 
     if MDCS_DRG.SR18_group(record):
       return 'SR18'
+
+    if MDCS_DRG.SR11_group(record):
+      return 'SR11'
+
+    if MDCS_DRG.SR13_group(record):
+      return 'SR13'
+
+    if MDCS_DRG.SR15_group(record):
+      return 'SR15'
 
     return ''
   else:

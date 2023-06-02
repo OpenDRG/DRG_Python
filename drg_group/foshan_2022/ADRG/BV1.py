@@ -12,6 +12,12 @@ def group(record):
     message('符合BV1入组条件，匹配规则：主诊断匹配')
     
     
+    if MDCB_DRG.BV16_group(record):
+      return 'BV16'
+
+    if MDCB_DRG.BV17_group(record):
+      return 'BV17'
+
     if MDCB_DRG.BV11_group(record):
       return 'BV11'
 
@@ -20,12 +26,6 @@ def group(record):
 
     if MDCB_DRG.BV15_group(record):
       return 'BV15'
-
-    if MDCB_DRG.BV16_group(record):
-      return 'BV16'
-
-    if MDCB_DRG.BV17_group(record):
-      return 'BV17'
 
     return ''
   else:

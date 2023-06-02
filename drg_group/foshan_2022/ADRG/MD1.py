@@ -8,18 +8,18 @@ def group(record):
   adrg_ss1=[]
   adrg_ss2=[]
   dept_list=[]
-  if True and record.ssList and record.ssList[0] in adrg_ss and record.ssList and intersect(record.ssList,adrg_ss):
-    message('符合MD1入组条件，匹配规则：主手术匹配、某一手术匹配')
+  if True and record.ssList and record.ssList[0] in adrg_ss:
+    message('符合MD1入组条件，匹配规则：主手术匹配')
     
     
+    if MDCM_DRG.MD17_group(record):
+      return 'MD17'
+
     if MDCM_DRG.MD13_group(record):
       return 'MD13'
 
     if MDCM_DRG.MD15_group(record):
       return 'MD15'
-
-    if MDCM_DRG.MD17_group(record):
-      return 'MD17'
 
     return ''
   else:

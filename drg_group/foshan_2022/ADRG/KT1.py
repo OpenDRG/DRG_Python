@@ -12,6 +12,9 @@ def group(record):
     message('符合KT1入组条件，匹配规则：主诊断匹配')
     
     
+    if MDCK_DRG.KT17_group(record):
+      return 'KT17'
+
     if MDCK_DRG.KT11_group(record):
       return 'KT11'
 
@@ -20,9 +23,6 @@ def group(record):
 
     if MDCK_DRG.KT15_group(record):
       return 'KT15'
-
-    if MDCK_DRG.KT17_group(record):
-      return 'KT17'
 
     return ''
   else:

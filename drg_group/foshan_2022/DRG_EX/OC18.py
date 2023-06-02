@@ -1,11 +1,11 @@
-from drg_group.foshan_2022.Base import message,intersect,SS_VALID
+from drg_group.foshan_2022.Base import message,intersect,has_mcc,has_cc,SS_VALID
 
 def group(record):
   adrg_zd=[]
   adrg_zd1=[]
-  adrg_ss=["03.9100X004","03.9101"]
+  adrg_ss=["03.9100x004","03.9101"]
   adrg_ss1=[]
   adrg_ss2=[]
-  if True and record.ssList and intersect(record.ssList,adrg_ss):
-    message('符合OC18入组条件，匹配规则：其他手术匹配、某一手术匹配')
+  if True and record.ssList and intersect(record.ssList[1:],adrg_ss):
+    message('符合OC18入组条件，匹配规则：其他手术匹配')
     return True

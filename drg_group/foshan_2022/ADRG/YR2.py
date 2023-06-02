@@ -8,8 +8,8 @@ def group(record):
   adrg_ss1=[]
   adrg_ss2=[]
   dept_list=[]
-  if True and record.zdList[0] in adrg_zd:
-    message('符合YR2入组条件，匹配规则：主诊断匹配')
+  if True and intersect(record.zdList,adrg_zd):
+    message('符合YR2入组条件，匹配规则：某一诊断匹配')
     
     
     if MDCY_DRG.YR29_group(record):

@@ -12,6 +12,12 @@ def group(record):
     message('符合EX2入组条件，匹配规则：主诊断匹配')
     
     
+    if MDCE_DRG.EX26_group(record):
+      return 'EX26'
+
+    if MDCE_DRG.EX27_group(record):
+      return 'EX27'
+
     if MDCE_DRG.EX21_group(record):
       return 'EX21'
 
@@ -20,12 +26,6 @@ def group(record):
 
     if MDCE_DRG.EX25_group(record):
       return 'EX25'
-
-    if MDCE_DRG.EX26_group(record):
-      return 'EX26'
-
-    if MDCE_DRG.EX27_group(record):
-      return 'EX27'
 
     return ''
   else:

@@ -12,17 +12,17 @@ def group(record):
     message('符合SU1入组条件，匹配规则：主诊断匹配')
     
     
-    if MDCS_DRG.SU13_group(record):
-      return 'SU13'
-
-    if MDCS_DRG.SU15_group(record):
-      return 'SU15'
-
     if MDCS_DRG.SU16_group(record):
       return 'SU16'
 
     if MDCS_DRG.SU17_group(record):
       return 'SU17'
+
+    if MDCS_DRG.SU13_group(record):
+      return 'SU13'
+
+    if MDCS_DRG.SU15_group(record):
+      return 'SU15'
 
     return ''
   else:

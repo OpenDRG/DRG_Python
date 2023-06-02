@@ -1,4 +1,4 @@
-from drg_group.foshan_2022.Base import message,intersect,SS_VALID
+from drg_group.foshan_2022.Base import message,intersect,has_mcc,has_cc,SS_VALID
 
 def group(record):
   adrg_zd=["C73.x00","C73.x00x003","C79.805","C85.900x036"]

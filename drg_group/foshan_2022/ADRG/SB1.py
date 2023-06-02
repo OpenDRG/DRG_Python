@@ -15,11 +15,11 @@ def group(record):
     if MDCS_DRG.SB10_group(record):
       return 'SB10'
 
-    if MDCS_DRG.SB11_group(record):
-      return 'SB11'
-
     if MDCS_DRG.SB12_group(record):
       return 'SB12'
+
+    if MDCS_DRG.SB11_group(record):
+      return 'SB11'
 
     if MDCS_DRG.SB13_group(record):
       return 'SB13'

@@ -15,11 +15,11 @@ def group(record):
     if MDCF_DRG.FR20_group(record):
       return 'FR20'
 
-    if MDCF_DRG.FR21_group(record):
-      return 'FR21'
-
     if MDCF_DRG.FR22_group(record):
       return 'FR22'
+
+    if MDCF_DRG.FR21_group(record):
+      return 'FR21'
 
     if MDCF_DRG.FR23_group(record):
       return 'FR23'

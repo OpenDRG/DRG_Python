@@ -28,6 +28,9 @@ def group(record):
     if MDCB_DRG.BR20_group(record):
       return 'BR20'
 
+    if MDCB_DRG.BR29_group(record):
+      return 'BR29'
+
     if MDCB_DRG.BR24_group(record):
       return 'BR24'
 
@@ -39,9 +42,6 @@ def group(record):
 
     if MDCB_DRG.BR28_group(record):
       return 'BR28'
-
-    if MDCB_DRG.BR29_group(record):
-      return 'BR29'
 
     return ''
   else:

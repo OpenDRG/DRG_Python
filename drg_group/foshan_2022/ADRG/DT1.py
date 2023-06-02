@@ -12,14 +12,14 @@ def group(record):
     message('符合DT1入组条件，匹配规则：主诊断匹配')
     
     
+    if MDCD_DRG.DT17_group(record):
+      return 'DT17'
+
     if MDCD_DRG.DT13_group(record):
       return 'DT13'
 
     if MDCD_DRG.DT15_group(record):
       return 'DT15'
-
-    if MDCD_DRG.DT17_group(record):
-      return 'DT17'
 
     return ''
   else:

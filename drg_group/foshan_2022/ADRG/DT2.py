@@ -12,14 +12,14 @@ def group(record):
     message('符合DT2入组条件，匹配规则：主诊断匹配')
     
     
+    if MDCD_DRG.DT27_group(record):
+      return 'DT27'
+
     if MDCD_DRG.DT23_group(record):
       return 'DT23'
 
     if MDCD_DRG.DT25_group(record):
       return 'DT25'
-
-    if MDCD_DRG.DT27_group(record):
-      return 'DT27'
 
     return ''
   else:

@@ -8,8 +8,8 @@ def group(record):
   adrg_ss1=[]
   adrg_ss2=[]
   dept_list=[]
-  if True and record.zdList[0] in adrg_zd and record.ssList and intersect(record.ssList,adrg_ss):
-    message('符合JA2_1入组条件，匹配规则：主诊断匹配、某一手术匹配')
+  if True and record.zdList[0] in adrg_zd:
+    message('符合JA2_1入组条件，匹配规则：主诊断匹配')
     
     
     if MDCJ_DRG.JA23_group(record):

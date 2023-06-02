@@ -15,17 +15,8 @@ def group(record):
     if MDCE_DRG.ES30_group(record):
       return 'ES30'
 
-    if MDCE_DRG.ES31_group(record):
-      return 'ES31'
-
     if MDCE_DRG.ES32_group(record):
       return 'ES32'
-
-    if MDCE_DRG.ES33_group(record):
-      return 'ES33'
-
-    if MDCE_DRG.ES35_group(record):
-      return 'ES35'
 
     if MDCE_DRG.ES36_group(record):
       return 'ES36'
@@ -35,6 +26,15 @@ def group(record):
 
     if MDCE_DRG.ES38_group(record):
       return 'ES38'
+
+    if MDCE_DRG.ES31_group(record):
+      return 'ES31'
+
+    if MDCE_DRG.ES33_group(record):
+      return 'ES33'
+
+    if MDCE_DRG.ES35_group(record):
+      return 'ES35'
 
     return ''
   else:

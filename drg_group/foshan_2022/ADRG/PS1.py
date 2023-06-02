@@ -15,11 +15,11 @@ def group(record):
     if MDCP_DRG.PS10_group(record):
       return 'PS10'
 
-    if MDCP_DRG.PS11_group(record):
-      return 'PS11'
-
     if MDCP_DRG.PS12_group(record):
       return 'PS12'
+
+    if MDCP_DRG.PS11_group(record):
+      return 'PS11'
 
     if MDCP_DRG.PS13_group(record):
       return 'PS13'

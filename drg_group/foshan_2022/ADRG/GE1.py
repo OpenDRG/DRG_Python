@@ -9,13 +9,16 @@ def group(record):
   adrg_ss1=[]
   adrg_ss2=[]
   dept_list=[]
-  if True and record.ssList and record.ssList[0] in adrg_ss and record.ssList and intersect(record.ssList,adrg_ss):
-    message('符合GE1入组条件，匹配规则：主手术匹配、某一手术匹配')
+  if True and record.ssList and record.ssList[0] in adrg_ss:
+    message('符合GE1入组条件，匹配规则：主手术匹配')
     
     if GE11.group(record):
       return 'GE11'
 
     
+    if MDCG_DRG.GE15_group(record):
+      return 'GE15'
+
     if MDCG_DRG.GE12_group(record):
       return 'GE12'
 
@@ -24,9 +27,6 @@ def group(record):
 
     if MDCG_DRG.GE14_group(record):
       return 'GE14'
-
-    if MDCG_DRG.GE15_group(record):
-      return 'GE15'
 
     return ''
   else:

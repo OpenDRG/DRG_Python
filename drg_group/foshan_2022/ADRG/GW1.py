@@ -12,6 +12,12 @@ def group(record):
     message('符合GW1入组条件，匹配规则：主诊断匹配')
     
     
+    if MDCG_DRG.GW16_group(record):
+      return 'GW16'
+
+    if MDCG_DRG.GW17_group(record):
+      return 'GW17'
+
     if MDCG_DRG.GW11_group(record):
       return 'GW11'
 
@@ -20,12 +26,6 @@ def group(record):
 
     if MDCG_DRG.GW15_group(record):
       return 'GW15'
-
-    if MDCG_DRG.GW16_group(record):
-      return 'GW16'
-
-    if MDCG_DRG.GW17_group(record):
-      return 'GW17'
 
     return ''
   else:

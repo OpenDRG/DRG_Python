@@ -15,11 +15,11 @@ def group(record):
     if MDCE_DRG.ET20_group(record):
       return 'ET20'
 
-    if MDCE_DRG.ET21_group(record):
-      return 'ET21'
-
     if MDCE_DRG.ET22_group(record):
       return 'ET22'
+
+    if MDCE_DRG.ET21_group(record):
+      return 'ET21'
 
     if MDCE_DRG.ET23_group(record):
       return 'ET23'
