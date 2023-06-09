@@ -32,6 +32,8 @@
 |drg_group/anyang_2021|安阳版|
 |drg_group/foshan_2022|佛山版|
 |drg_group/hefei_2023|合肥版|
+|drg_group/handan_2022|邯郸版|
+|drg_group/chongqing_2022|重庆版|
 
 &emsp;&emsp;其他地区版本的分组器将逐步发布，敬请关注
 
