@@ -11,13 +11,13 @@ def group(record):
   if True and record.zdList[0] in adrg_zd:
     message('符合HZ3入组条件，匹配规则：主诊断匹配')
     
+    
     if MDCH_DRG.HZ33_group(record):
       return 'HZ33'
 
     if MDCH_DRG.HZ35_group(record):
       return 'HZ35'
 
-    return 'HZ3'
+    return ''
   else:
     return ''
-

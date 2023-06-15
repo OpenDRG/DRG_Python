@@ -11,13 +11,13 @@ def group(record):
   if True and record.zdList[0] in adrg_zd:
     message('符合LV1入组条件，匹配规则：主诊断匹配')
     
+    
     if MDCL_DRG.LV13_group(record):
       return 'LV13'
 
     if MDCL_DRG.LV15_group(record):
       return 'LV15'
 
-    return 'LV1'
+    return ''
   else:
     return ''
-

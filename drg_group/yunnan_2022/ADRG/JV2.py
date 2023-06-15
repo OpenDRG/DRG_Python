@@ -11,10 +11,10 @@ def group(record):
   if True and record.zdList[0] in adrg_zd:
     message('符合JV2入组条件，匹配规则：主诊断匹配')
     
+    
     if MDCJ_DRG.JV29_group(record):
       return 'JV29'
 
-    return 'JV2'
+    return ''
   else:
     return ''
-

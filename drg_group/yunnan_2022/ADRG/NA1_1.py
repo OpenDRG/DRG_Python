@@ -11,13 +11,13 @@ def group(record):
   if True and record.zdList[0] in adrg_zd and record.ssList and intersect(record.ssList,adrg_ss):
     message('符合NA1_1入组条件，匹配规则：主诊断匹配、某一手术匹配')
     
+    
     if MDCN_DRG.NA13_group(record):
       return 'NA13'
 
     if MDCN_DRG.NA15_group(record):
       return 'NA15'
 
-    return 'NA1'
+    return ''
   else:
     return ''
-

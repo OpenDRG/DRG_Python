@@ -4,8 +4,8 @@ from drg_group.chongqing_2022.GroupProxy import GroupProxy
 
 if __name__ == "__main__":
   grouper=GroupProxy()
-  print(grouper.group_record('22136028,2.0,50.0,18624.0,,13030501.0,16.0,1.0,"D61.900,E03.900,I10.x00x002",00.1801,QJ15'))
-  sys.exit(-1)
+  # print(grouper.group_record('22136028,2.0,50.0,18624.0,,13030501.0,16.0,1.0,"D61.900,E03.900,I10.x00x002",00.1801,QJ15'))
+  # sys.exit(-1)
   if len(sys.argv)==1:
     path=os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
     if not os.path.exists(os.path.join(path,'input.txt')):

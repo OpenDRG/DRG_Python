@@ -8,8 +8,9 @@ def group(record):
   adrg_ss1=[]
   adrg_ss2=[]
   dept_list=[]
-  if True and record.zdList[0] in adrg_zd and record.ssList and record.ssList[0] in adrg_ss and record.ssList and intersect(record.ssList,adrg_ss):
-    message('符合BB2入组条件，匹配规则：主诊断匹配、主手术匹配、某一手术匹配')
+  if True and record.zdList[0] in adrg_zd and record.ssList and record.ssList[0] in adrg_ss:
+    message('符合BB2入组条件，匹配规则：主诊断匹配、主手术匹配')
+    
     
     if MDCB_DRG.BB23_group(record):
       return 'BB23'
@@ -17,7 +18,6 @@ def group(record):
     if MDCB_DRG.BB25_group(record):
       return 'BB25'
 
-    return 'BB2'
+    return ''
   else:
     return ''
-

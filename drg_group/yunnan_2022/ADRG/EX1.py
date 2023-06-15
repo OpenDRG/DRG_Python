@@ -11,13 +11,13 @@ def group(record):
   if True and record.zdList[0] in adrg_zd:
     message('符合EX1入组条件，匹配规则：主诊断匹配')
     
+    
     if MDCE_DRG.EX13_group(record):
       return 'EX13'
 
     if MDCE_DRG.EX15_group(record):
       return 'EX15'
 
-    return 'EX1'
+    return ''
   else:
     return ''
-

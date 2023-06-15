@@ -11,6 +11,7 @@ def group(record):
   if True and intersect(record.zdList,adrg_zd):
     message('符合YR1入组条件，匹配规则：某一诊断匹配')
     
+    
     if MDCY_DRG.YR11_group(record):
       return 'YR11'
 
@@ -20,7 +21,6 @@ def group(record):
     if MDCY_DRG.YR15_group(record):
       return 'YR15'
 
-    return 'YR1'
+    return ''
   else:
     return ''
-

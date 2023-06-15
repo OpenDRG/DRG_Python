@@ -11,6 +11,7 @@ def group(record):
   if True and record.zdList[0] in adrg_zd:
     message('符合IR1入组条件，匹配规则：主诊断匹配')
     
+    
     if MDCI_DRG.IR11_group(record):
       return 'IR11'
 
@@ -20,7 +21,6 @@ def group(record):
     if MDCI_DRG.IR15_group(record):
       return 'IR15'
 
-    return 'IR1'
+    return ''
   else:
     return ''
-

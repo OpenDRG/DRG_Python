@@ -1,5 +1,5 @@
 import time
-from drg_group.yunnan_2022.Base import DrgGroupStatus,MedicalRecord,GroupResult,groupMessages,output,DRG
+from drg_group.yunnan_2022.Base import DrgGroupStatus,MedicalRecord,GroupResult,create_result,groupMessages,output,DRG
 from drg_group.yunnan_2022.Grouper import group
 
 class Grouper_yunnan_2022:
@@ -8,16 +8,10 @@ class Grouper_yunnan_2022:
     self.kwargs=kwargs
 
   def group(self,record):
-    result=group(record)
-    output('***',result,DRG.get(result,DrgGroupStatus.FAIL.value),'***')
-    if result=='0000':
-      return GroupResult(record.Index,DrgGroupStatus.FAIL.value,self.return_messages(),'0000','00','0000')
-    elif result[1:3]=='00':
-      return GroupResult(record.Index,DrgGroupStatus.FAIL.value,self.return_messages(),'MDC'+result[0],'00','0000')
-    elif result[1:3]=='QY':
-      return GroupResult(record.Index,DrgGroupStatus.QY.value,self.return_messages(),'MDC'+result[0],'QY',result)
-    else:
-      return GroupResult(record.Index,DrgGroupStatus.SUCCESS.value,self.return_messages(),'MDC'+result[0],result[:3],result)
+    drgCode=group(record)
+    
+    output('***',drgCode,DRG.get(drgCode,DrgGroupStatus.FAIL.value),'***')
+    return create_result(record.Index,self.return_messages(),drgCode)
 
   def return_messages(self):
     result=groupMessages.copy()
@@ -32,7 +26,7 @@ class Grouper_yunnan_2022:
 
 if __name__ == "__main__":
   grouper=Grouper_yunnan_2022()
-  record=MedicalRecord(Index=1653890, gender=2, age=10, ageDay=21, weight=3200, dept='0302',inHospitalTime=14,leavingType='1',
+  record=MedicalRecord(Index=1653890, gender=2, age=10, ageDay=21, weight=3200, dept='0302',inHospitalTime=14,leavingType='1',amount=0,
     zdList='Z51.103,C15.900'.split(','), 
     ssList='99.2503'.split(','))
   s1 = time.time()

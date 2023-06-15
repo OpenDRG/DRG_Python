@@ -1,10 +1,10 @@
 from drg_group.yunnan_2022.Base import message,intersect,SS_VALID
-from drg_group.yunnan_2022.ADRG import AA1,AB1,AC1,AE1,AF1,AG1,AG2,AH1_1,AH1_2,AH1_3
+from drg_group.yunnan_2022.ADRG import AA1,AB1,AC1,AE1,AF1,AG1,AG2,AH1
 
 def group(record):
   mdc_zd=[]
   dept_list=[]
-  if not (True and record.ssList and record.ssList[0] in SS_VALID):
+  if not (True and record.ssList and (record.ssList[0] in SS_VALID or record.ssList[0] in ["96.0400","96.7201"])):
     return ''
   
   message('符合MDCA入组条件，匹配规则：存在手术')
@@ -30,13 +30,7 @@ def group(record):
   result=AG2.group(record)
   if result:
     return result
-  result=AH1_1.group(record)
-  if result:
-    return result
-  result=AH1_2.group(record)
-  if result:
-    return result
-  result=AH1_3.group(record)
+  result=AH1.group(record)
   if result:
     return result
 

@@ -11,10 +11,10 @@ def group(record):
   if True and record.zdList[0] in adrg_zd:
     message('符合ER3入组条件，匹配规则：主诊断匹配')
     
+    
     if MDCE_DRG.ER39_group(record):
       return 'ER39'
 
-    return 'ER3'
+    return ''
   else:
     return ''
-

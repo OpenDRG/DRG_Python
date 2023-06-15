@@ -8,8 +8,9 @@ def group(record):
   adrg_ss1=[]
   adrg_ss2=[]
   dept_list=[]
-  if True and intersect(record.zdList,adrg_zd) and record.ssList and record.ssList[0] in adrg_ss and record.ssList and intersect(record.ssList,adrg_ss):
-    message('符合RB1入组条件，匹配规则：某一诊断匹配、主手术匹配、某一手术匹配')
+  if True and intersect(record.zdList,adrg_zd) and record.ssList and record.ssList[0] in adrg_ss:
+    message('符合RB1入组条件，匹配规则：某一诊断匹配、主手术匹配')
+    
     
     if MDCR_DRG.RB11_group(record):
       return 'RB11'
@@ -17,7 +18,6 @@ def group(record):
     if MDCR_DRG.RB15_group(record):
       return 'RB15'
 
-    return 'RB1'
+    return ''
   else:
     return ''
-

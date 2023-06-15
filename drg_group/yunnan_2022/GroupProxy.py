@@ -5,7 +5,7 @@ import time
 import re
 from collections import namedtuple
 from drg_group.yunnan_2022.Grouper_yunnan_2022 import Grouper_yunnan_2022 as Grouper
-from drg_group.yunnan_2022.Base import Reader,MedicalRecord,DrgGroupStatus,GroupResult,tuple_to_str,remove_last_zero
+from drg_group.yunnan_2022.Base import Reader,MedicalRecord,DrgGroupStatus,GroupResult,create_result_check,tuple_to_str,remove_last_zero
 
 class GroupProxy:
   def __init__(self,**kwargs):
@@ -65,7 +65,7 @@ class GroupProxy:
     if self.TRANS_CODE:
       trans_result=self.trans(record)
       if isinstance(trans_result,DrgGroupStatus):
-        result=GroupResult(record.Index,trans_result.value,self.return_messages(),'0000','00','0000')
+        result=create_result_check(record.Index,trans_result,self.return_messages())
         if self.DEBUG:
           print(result)
         return result
@@ -78,7 +78,7 @@ class GroupProxy:
         record=record._replace(ssList=[])
     check_result=self.check(record)
     if check_result:
-      result=GroupResult(record.Index,check_result.value,self.return_messages(),'0000','00','0000')
+      result=create_result_check(record.Index,check_result,self.return_messages())
     else:
       result=self.grouper.group(record)
       group_messages=result.messages
@@ -130,26 +130,26 @@ class GroupProxy:
 
   def check(self,record):
     try:
-      if record.gender==None:
+      if record.gender==None or record.gender=='':
         self.message('病人性别为空')
         return DrgGroupStatus.CHECK_FAILED
       if record.gender not in ['1','2']:
         self.message('病人性别取值必须为1或2：{}'.format(record.gender))
         return DrgGroupStatus.CHECK_FAILED
-      if record.age==None:
+      if record.age==None or record.age=='':
         self.message('病人年龄为空')
         return DrgGroupStatus.CHECK_FAILED
-      if int(record.age)==0 and record.ageDay==None:
+      if int(record.age)==0 and (record.ageDay==None or record.ageDay==''):
         self.message('病人年龄0时，年龄天数必须有值')
         return DrgGroupStatus.CHECK_FAILED
-      if int(record.age)==0 and int(record.ageDay)<=28 and record.weight==None:
+      if int(record.age)==0 and int(record.ageDay)<=28 and (record.weight==None or record.weight==''):
         self.message('新生儿的出生体重必须有值')
         return DrgGroupStatus.CHECK_FAILED
       if not record.zdList:
         self.message('诊断信息为空')
         return DrgGroupStatus.CHECK_FAILED
-    except:
-      self.message('病案信息解析出错')
+    except Exception as e:
+      self.message('病案信息解析出错：{}'.format(e))
       return DrgGroupStatus.CHECK_FAILED
     for x in record.zdList:
       self.message('{} {}'.format(x,self.ZD_INFO.get(x,'未知名称')))
@@ -174,9 +174,10 @@ class GroupProxy:
       file.write(str(self.group_record(line))+'\n')
 
   def group_csv(self,filename,cols):
-    filename=filename.replace('.csv','_python_result.csv')
     import pandas as pd
-    df=pd.read_csv(filename,index_col=cols[0])
+    cols=cols.split(',')
+    df=pd.read_csv(filename,index_col=cols[0],dtype=dict(zip(cols[:2]+[cols[5]]+[cols[7]],[str]*4)))
+    filename=filename.replace('.csv','_python_result.csv')
     self.group_df(df,open(filename,'w',encoding='utf-8-sig'),cols)
 
 def replace_csv(csv):
@@ -188,7 +189,7 @@ def replace_csv(csv):
 
 if __name__ == "__main__":
   grouper=GroupProxy()
-  record=MedicalRecord(Index='1653890', age=10, ageDay=21, weight=3200, gender='2', dept='28',inHospitalTime=14,leavingType='1',
+  record=MedicalRecord(Index='1653890', age=10, ageDay=21, weight=3200, gender='2', dept='28',inHospitalTime=14,leavingType='1',amount=0,
   zdList='S06.500,I21.900x011,I62.001,G93.501,S06.202,I63.908,S02.900x002,J98.414,J96.000,J81.x00x002', 
   ssList='96.7201,01.2400x005,03.3100x001,33.2403,31.1x00x005,38.9301,38.9303')
   print(record)

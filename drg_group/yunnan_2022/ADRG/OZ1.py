@@ -11,13 +11,13 @@ def group(record):
   if True and record.zdList[0] in adrg_zd:
     message('符合OZ1入组条件，匹配规则：主诊断匹配')
     
+    
     if MDCO_DRG.OZ11_group(record):
       return 'OZ11'
 
     if MDCO_DRG.OZ15_group(record):
       return 'OZ15'
 
-    return 'OZ1'
+    return ''
   else:
     return ''
-

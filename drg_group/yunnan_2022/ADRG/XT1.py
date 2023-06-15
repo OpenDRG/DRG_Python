@@ -11,6 +11,7 @@ def group(record):
   if True and record.zdList[0] in adrg_zd:
     message('符合XT1入组条件，匹配规则：主诊断匹配')
     
+    
     if MDCX_DRG.XT11_group(record):
       return 'XT11'
 
@@ -20,7 +21,6 @@ def group(record):
     if MDCX_DRG.XT15_group(record):
       return 'XT15'
 
-    return 'XT1'
+    return ''
   else:
     return ''
-

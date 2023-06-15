@@ -8,13 +8,13 @@ def group(record):
   adrg_ss1=["40.2100","40.2200","40.2300","40.2900x002","40.2901","40.2910","40.3x00x001","40.3x00x002","40.3x00x003","40.3x00x005","40.4100","40.4200","40.5000","40.5100","40.5101","40.5901","40.5914"]
   adrg_ss2=[]
   dept_list=[]
-  if True and record.zdList[0] in adrg_zd and record.ssList and intersect(record.ssList,adrg_ss) and record.ssList and intersect(record.ssList,adrg_ss) and intersect(record.ssList,adrg_ss1):
-    message('符合JA2_2入组条件，匹配规则：主诊断匹配、某一手术匹配、双手术匹配')
+  if True and record.zdList[0] in adrg_zd and record.ssList and intersect(record.ssList,adrg_ss) and intersect(record.ssList,adrg_ss1):
+    message('符合JA2_2入组条件，匹配规则：主诊断匹配、双手术匹配')
+    
     
     if MDCJ_DRG.JA29_group(record):
       return 'JA29'
 
-    return 'JA2'
+    return ''
   else:
     return ''
-

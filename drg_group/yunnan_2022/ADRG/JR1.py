@@ -11,13 +11,13 @@ def group(record):
   if True and record.zdList[0] in adrg_zd:
     message('符合JR1入组条件，匹配规则：主诊断匹配')
     
+    
     if MDCJ_DRG.JR11_group(record):
       return 'JR11'
 
     if MDCJ_DRG.JR15_group(record):
       return 'JR15'
 
-    return 'JR1'
+    return ''
   else:
     return ''
-

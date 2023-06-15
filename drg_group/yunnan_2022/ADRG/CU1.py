@@ -11,10 +11,10 @@ def group(record):
   if True and record.zdList[0] in adrg_zd:
     message('符合CU1入组条件，匹配规则：主诊断匹配')
     
+    
     if MDCC_DRG.CU19_group(record):
       return 'CU19'
 
-    return 'CU1'
+    return ''
   else:
     return ''
-

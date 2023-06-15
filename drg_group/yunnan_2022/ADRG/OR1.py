@@ -11,13 +11,13 @@ def group(record):
   if True and intersect(record.zdList[1:],adrg_zd1):
     message('符合OR1入组条件，匹配规则：其他诊断匹配')
     
+    
     if MDCO_DRG.OR11_group(record):
       return 'OR11'
 
     if MDCO_DRG.OR15_group(record):
       return 'OR15'
 
-    return 'OR1'
+    return ''
   else:
     return ''
-

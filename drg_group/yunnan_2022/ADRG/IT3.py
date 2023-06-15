@@ -11,6 +11,7 @@ def group(record):
   if True and record.zdList[0] in adrg_zd:
     message('符合IT3入组条件，匹配规则：主诊断匹配')
     
+    
     if MDCI_DRG.IT31_group(record):
       return 'IT31'
 
@@ -20,7 +21,6 @@ def group(record):
     if MDCI_DRG.IT35_group(record):
       return 'IT35'
 
-    return 'IT3'
+    return ''
   else:
     return ''
-

@@ -11,13 +11,13 @@ def group(record):
   if True and record.zdList[0] in adrg_zd:
     message('符合ET2入组条件，匹配规则：主诊断匹配')
     
+    
     if MDCE_DRG.ET21_group(record):
       return 'ET21'
 
     if MDCE_DRG.ET25_group(record):
       return 'ET25'
 
-    return 'ET2'
+    return ''
   else:
     return ''
-

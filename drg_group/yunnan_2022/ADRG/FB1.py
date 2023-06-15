@@ -8,13 +8,13 @@ def group(record):
   adrg_ss1=["00.6600x004","00.6601","17.5500x002","17.5500x003","17.5501","36.0300x002","36.0300x003","36.0300x006","36.0301","36.0302","36.0303","36.0400","36.0601","36.0602","36.0700","36.0700x004","36.0701","36.1000x001","36.1000x002","36.1100","36.1200","36.1300","36.1400","36.1500","36.1600","36.1700x001","36.1900x001","36.3400","36.9100","36.9900x002","36.9900x006","36.9900x007","36.9900x008","36.9900x009","36.9900x010","36.9900x011","36.9900x012","36.9900x013","36.9901","36.9902","36.9903","37.1100x005","37.1100x007"]
   adrg_ss2=[]
   dept_list=[]
-  if True and record.ssList and intersect(record.ssList,adrg_ss) and record.ssList and intersect(record.ssList,adrg_ss) and intersect(record.ssList,adrg_ss1):
-    message('符合FB1入组条件，匹配规则：某一手术匹配、双手术匹配')
+  if True and record.ssList and intersect(record.ssList,adrg_ss) and intersect(record.ssList,adrg_ss1):
+    message('符合FB1入组条件，匹配规则：双手术匹配')
+    
     
     if MDCF_DRG.FB19_group(record):
       return 'FB19'
 
-    return 'FB1'
+    return ''
   else:
     return ''
-

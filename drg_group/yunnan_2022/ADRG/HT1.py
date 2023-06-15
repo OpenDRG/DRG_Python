@@ -11,13 +11,13 @@ def group(record):
   if True and record.zdList[0] in adrg_zd:
     message('符合HT1入组条件，匹配规则：主诊断匹配')
     
+    
     if MDCH_DRG.HT13_group(record):
       return 'HT13'
 
     if MDCH_DRG.HT15_group(record):
       return 'HT15'
 
-    return 'HT1'
+    return ''
   else:
     return ''
-

@@ -11,6 +11,7 @@ def group(record):
   if True and record.zdList[0] in adrg_zd:
     message('符合KV1入组条件，匹配规则：主诊断匹配')
     
+    
     if MDCK_DRG.KV11_group(record):
       return 'KV11'
 
@@ -20,7 +21,6 @@ def group(record):
     if MDCK_DRG.KV15_group(record):
       return 'KV15'
 
-    return 'KV1'
+    return ''
   else:
     return ''
-

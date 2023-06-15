@@ -11,10 +11,10 @@ def group(record):
   if True and record.zdList[0] in adrg_zd:
     message('符合FR4入组条件，匹配规则：主诊断匹配')
     
+    
     if MDCF_DRG.FR49_group(record):
       return 'FR49'
 
-    return 'FR4'
+    return ''
   else:
     return ''
-

@@ -11,13 +11,13 @@ def group(record):
   if True and record.zdList[0] in adrg_zd:
     message('符合KS1入组条件，匹配规则：主诊断匹配')
     
+    
     if MDCK_DRG.KS13_group(record):
       return 'KS13'
 
     if MDCK_DRG.KS15_group(record):
       return 'KS15'
 
-    return 'KS1'
+    return ''
   else:
     return ''
-

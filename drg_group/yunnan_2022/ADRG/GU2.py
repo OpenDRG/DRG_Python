@@ -11,6 +11,7 @@ def group(record):
   if True and record.zdList[0] in adrg_zd:
     message('符合GU2入组条件，匹配规则：主诊断匹配')
     
+    
     if MDCG_DRG.GU21_group(record):
       return 'GU21'
 
@@ -20,7 +21,6 @@ def group(record):
     if MDCG_DRG.GU25_group(record):
       return 'GU25'
 
-    return 'GU2'
+    return ''
   else:
     return ''
-

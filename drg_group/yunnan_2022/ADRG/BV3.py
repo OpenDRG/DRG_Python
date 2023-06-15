@@ -11,13 +11,13 @@ def group(record):
   if True and record.zdList[0] in adrg_zd:
     message('符合BV3入组条件，匹配规则：主诊断匹配')
     
+    
     if MDCB_DRG.BV33_group(record):
       return 'BV33'
 
     if MDCB_DRG.BV35_group(record):
       return 'BV35'
 
-    return 'BV3'
+    return ''
   else:
     return ''
-

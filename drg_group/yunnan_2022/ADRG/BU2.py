@@ -11,6 +11,7 @@ def group(record):
   if True and record.zdList[0] in adrg_zd:
     message('符合BU2入组条件，匹配规则：主诊断匹配')
     
+    
     if MDCB_DRG.BU21_group(record):
       return 'BU21'
 
@@ -20,7 +21,6 @@ def group(record):
     if MDCB_DRG.BU25_group(record):
       return 'BU25'
 
-    return 'BU2'
+    return ''
   else:
     return ''
-

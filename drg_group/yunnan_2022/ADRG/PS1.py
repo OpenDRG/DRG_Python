@@ -11,6 +11,7 @@ def group(record):
   if True and intersect(record.zdList,adrg_zd) and record.weight and record.weight<1500 and record.ageDay!=None and record.ageDay<=28:
     message('符合PS1入组条件，匹配规则：某一诊断匹配、体重小于1500克、新生儿')
     
+    
     if MDCP_DRG.PS11_group(record):
       return 'PS11'
 
@@ -20,7 +21,6 @@ def group(record):
     if MDCP_DRG.PS15_group(record):
       return 'PS15'
 
-    return 'PS1'
+    return ''
   else:
     return ''
-

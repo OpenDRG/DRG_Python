@@ -11,10 +11,10 @@ def group(record):
   if True and record.zdList[0] in adrg_zd:
     message('符合XR3入组条件，匹配规则：主诊断匹配')
     
+    
     if MDCX_DRG.XR39_group(record):
       return 'XR39'
 
-    return 'XR3'
+    return ''
   else:
     return ''
-

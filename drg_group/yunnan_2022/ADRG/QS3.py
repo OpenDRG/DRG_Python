@@ -11,6 +11,7 @@ def group(record):
   if True and record.zdList[0] in adrg_zd:
     message('符合QS3入组条件，匹配规则：主诊断匹配')
     
+    
     if MDCQ_DRG.QS31_group(record):
       return 'QS31'
 
@@ -20,7 +21,6 @@ def group(record):
     if MDCQ_DRG.QS35_group(record):
       return 'QS35'
 
-    return 'QS3'
+    return ''
   else:
     return ''
-

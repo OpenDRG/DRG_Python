@@ -11,6 +11,7 @@ def group(record):
   if True and record.zdList[0] in adrg_zd:
     message('符合ER2入组条件，匹配规则：主诊断匹配')
     
+    
     if MDCE_DRG.ER21_group(record):
       return 'ER21'
 
@@ -20,7 +21,6 @@ def group(record):
     if MDCE_DRG.ER25_group(record):
       return 'ER25'
 
-    return 'ER2'
+    return ''
   else:
     return ''
-

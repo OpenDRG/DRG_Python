@@ -11,13 +11,13 @@ def group(record):
   if True and record.zdList[0] in adrg_zd:
     message('符合BS1入组条件，匹配规则：主诊断匹配')
     
+    
     if MDCB_DRG.BS13_group(record):
       return 'BS13'
 
     if MDCB_DRG.BS15_group(record):
       return 'BS15'
 
-    return 'BS1'
+    return ''
   else:
     return ''
-

@@ -11,10 +11,10 @@ def group(record):
   if True and record.zdList[0] in adrg_zd:
     message('符合LX1入组条件，匹配规则：主诊断匹配')
     
+    
     if MDCL_DRG.LX19_group(record):
       return 'LX19'
 
-    return 'LX1'
+    return ''
   else:
     return ''
-

@@ -8,8 +8,9 @@ def group(record):
   adrg_ss1=["40.2900x023","40.2905","40.2907","40.2909","40.5000","40.5200","40.5300","40.5301","40.5400x001","40.5907","40.5908","40.5909","40.5910","40.5911","40.5912"]
   adrg_ss2=[]
   dept_list=[]
-  if True and record.zdList[0] in adrg_zd and record.ssList and intersect(record.ssList,adrg_ss) and record.ssList and intersect(record.ssList,adrg_ss) and intersect(record.ssList,adrg_ss1):
-    message('符合NA1_2入组条件，匹配规则：主诊断匹配、某一手术匹配、双手术匹配')
+  if True and record.zdList[0] in adrg_zd and record.ssList and intersect(record.ssList,adrg_ss) and intersect(record.ssList,adrg_ss1):
+    message('符合NA1_2入组条件，匹配规则：主诊断匹配、双手术匹配')
+    
     
     if MDCN_DRG.NA13_group(record):
       return 'NA13'
@@ -17,7 +18,6 @@ def group(record):
     if MDCN_DRG.NA15_group(record):
       return 'NA15'
 
-    return 'NA1'
+    return ''
   else:
     return ''
-

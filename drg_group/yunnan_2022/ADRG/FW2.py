@@ -11,6 +11,7 @@ def group(record):
   if True and record.zdList[0] in adrg_zd:
     message('符合FW2入组条件，匹配规则：主诊断匹配')
     
+    
     if MDCF_DRG.FW21_group(record):
       return 'FW21'
 
@@ -20,7 +21,6 @@ def group(record):
     if MDCF_DRG.FW25_group(record):
       return 'FW25'
 
-    return 'FW2'
+    return ''
   else:
     return ''
-

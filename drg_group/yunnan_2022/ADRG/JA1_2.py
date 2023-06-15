@@ -8,13 +8,13 @@ def group(record):
   adrg_ss1=["85.2100x003","85.2100x019","85.2200","85.2300x001","85.2301","85.3300x001","85.3400x002","85.3401","85.3500x001","85.3600x001","85.3601","85.4100x001","85.4200x001","85.4200x003"]
   adrg_ss2=["40.2100","40.2200","40.2300","40.2900x002","40.2901","40.2910","40.3x00x001","40.3x00x002","40.3x00x003","40.3x00x005","40.4100","40.4200","40.5000","40.5100","40.5101","40.5901","40.5914","40.5915"]
   dept_list=[]
-  if True and record.zdList[0] in adrg_zd and record.ssList and intersect(record.ssList,adrg_ss) and record.ssList and intersect(record.ssList,adrg_ss) and intersect(record.ssList,adrg_ss1) and record.ssList and intersect(record.ssList,adrg_ss) and intersect(record.ssList,adrg_ss1) and intersect(record.ssList,adrg_ss2):
-    message('符合JA1_2入组条件，匹配规则：主诊断匹配、某一手术匹配、双手术匹配、三手术匹配')
+  if True and record.zdList[0] in adrg_zd and record.ssList and intersect(record.ssList,adrg_ss) and intersect(record.ssList,adrg_ss1) and intersect(record.ssList,adrg_ss2):
+    message('符合JA1_2入组条件，匹配规则：主诊断匹配、三手术匹配')
+    
     
     if MDCJ_DRG.JA19_group(record):
       return 'JA19'
 
-    return 'JA1'
+    return ''
   else:
     return ''
-

@@ -11,6 +11,7 @@ def group(record):
   if True and record.zdList[0] in adrg_zd:
     message('符合ES1入组条件，匹配规则：主诊断匹配')
     
+    
     if MDCE_DRG.ES11_group(record):
       return 'ES11'
 
@@ -20,7 +21,6 @@ def group(record):
     if MDCE_DRG.ES15_group(record):
       return 'ES15'
 
-    return 'ES1'
+    return ''
   else:
     return ''
-

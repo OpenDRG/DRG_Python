@@ -11,13 +11,13 @@ def group(record):
   if True and not intersect(record.ssList,SS_VALID):
     message('符合ZZ1入组条件，匹配规则：无手术')
     
+    
     if MDCZ_DRG.ZZ11_group(record):
       return 'ZZ11'
 
     if MDCZ_DRG.ZZ15_group(record):
       return 'ZZ15'
 
-    return 'ZZ1'
+    return ''
   else:
     return ''
-

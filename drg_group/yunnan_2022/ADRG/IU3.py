@@ -11,13 +11,13 @@ def group(record):
   if True and record.zdList[0] in adrg_zd:
     message('符合IU3入组条件，匹配规则：主诊断匹配')
     
+    
     if MDCI_DRG.IU33_group(record):
       return 'IU33'
 
     if MDCI_DRG.IU35_group(record):
       return 'IU35'
 
-    return 'IU3'
+    return ''
   else:
     return ''
-

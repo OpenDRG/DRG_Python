@@ -11,13 +11,13 @@ def group(record):
   if True and record.zdList[0] in adrg_zd and record.ssList and intersect(record.ssList,adrg_ss):
     message('符合IB1_2入组条件，匹配规则：主诊断匹配、某一手术匹配')
     
+    
     if MDCI_DRG.IB11_group(record):
       return 'IB11'
 
     if MDCI_DRG.IB15_group(record):
       return 'IB15'
 
-    return 'IB1'
+    return ''
   else:
     return ''
-

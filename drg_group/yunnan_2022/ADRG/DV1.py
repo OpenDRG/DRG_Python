@@ -11,10 +11,10 @@ def group(record):
   if True and record.zdList[0] in adrg_zd:
     message('符合DV1入组条件，匹配规则：主诊断匹配')
     
+    
     if MDCD_DRG.DV19_group(record):
       return 'DV19'
 
-    return 'DV1'
+    return ''
   else:
     return ''
-

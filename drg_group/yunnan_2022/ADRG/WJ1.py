@@ -8,8 +8,9 @@ def group(record):
   adrg_ss1=[]
   adrg_ss2=[]
   dept_list=[]
-  if True and record.ssList and record.ssList[0] in SS_VALID:
+  if True and record.ssList and intersect(record.ssList,SS_VALID):
     message('符合WJ1入组条件，匹配规则：存在手术')
+    
     
     if MDCW_DRG.WJ11_group(record):
       return 'WJ11'
@@ -20,7 +21,6 @@ def group(record):
     if MDCW_DRG.WJ15_group(record):
       return 'WJ15'
 
-    return 'WJ1'
+    return ''
   else:
     return ''
-

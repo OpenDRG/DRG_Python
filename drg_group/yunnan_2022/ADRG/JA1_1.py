@@ -8,13 +8,13 @@ def group(record):
   adrg_ss1=["85.4300x003","85.4300x004","85.4301","85.4302","85.4303","85.4401","85.4402","85.4403","85.4500","85.4500x001","85.4500x003","85.4501","85.4600","85.4700","85.4800"]
   adrg_ss2=[]
   dept_list=[]
-  if True and record.zdList[0] in adrg_zd and record.ssList and intersect(record.ssList,adrg_ss) and record.ssList and intersect(record.ssList,adrg_ss) and intersect(record.ssList,adrg_ss1):
-    message('符合JA1_1入组条件，匹配规则：主诊断匹配、某一手术匹配、双手术匹配')
+  if True and record.zdList[0] in adrg_zd and record.ssList and intersect(record.ssList,adrg_ss) and intersect(record.ssList,adrg_ss1):
+    message('符合JA1_1入组条件，匹配规则：主诊断匹配、双手术匹配')
+    
     
     if MDCJ_DRG.JA19_group(record):
       return 'JA19'
 
-    return 'JA1'
+    return ''
   else:
     return ''
-
